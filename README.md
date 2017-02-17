@@ -2,4 +2,4 @@
 
 En este repositorio encontraras codigo util para tus proyectos.
 
-In this repository you will find usefull code for your projects.
+In this repository you will find useful code for your projects.
