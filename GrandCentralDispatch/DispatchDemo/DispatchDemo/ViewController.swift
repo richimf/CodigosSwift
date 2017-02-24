@@ -84,10 +84,12 @@ class ViewController: UIViewController {
         
         //**** ACCESSING THE MAIN QUEUE EXAMPLE ****//
         //accessingMAINQueue()
-        
         //Example main queue
         downloadImageAndShowIt()
         
+        //**** DispatchWorkItem Objects EXAMPLE ****//
+        workItems()
+    
     }
     
     func helloWorldQueues(){
@@ -194,7 +196,7 @@ class ViewController: UIViewController {
         
         //It is possible to set qos, if you not set it, que queue is setted to "default" value
         let globalQueue = DispatchQueue.global(qos: .userInitiated)
-
+        
         //use global queuse as any other
         globalQueue.async {
             for i in 0..<10 {
@@ -223,6 +225,43 @@ class ViewController: UIViewController {
             }
         }).resume()
     }
+    
+    func workItems(){
+        /*A DispatchWorkItem is a block of code that can be dispatched on any queue and therefore the contained
+         code to be executed on a background, or the main thread. Think of it really simply; as a bunch of code
+         that you just invoke, instead of writing the code blocks in the way we’ve seen in the previous parts.*/
+        
+        //Simple way to use a workItem
+        /*let workItem = DispatchWorkItem {
+            // Do something
+        }*/
+        
+        //use workItem
+        var value = 10
+        
+        let workItem = DispatchWorkItem {
+            value += 5
+        }
+        
+        //simple way to execute a workItem:
+        //workItem.perform()
+        
+        //executing workItem in a global queue:
+        let queue = DispatchQueue.global()
+        //good
+        /*queue.async {
+            workItem.perform()
+        }*/
+        //better way to EXECUTE workItems
+        queue.async(execute: workItem)
+        
+        //When a work item is dispatched, you can NOTIFY your main queue WHEN ITS DONE, or any other queue
+        workItem.notify(queue: DispatchQueue.main) {
+            print("value = ", value)
+        }
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
