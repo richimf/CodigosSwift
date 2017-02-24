@@ -41,6 +41,8 @@
  unspecified     <--- lowest priority
 
  We’re going to work on the queuesWithQoS().
+ More about priorities:
+ https://developer.apple.com/library/content/documentation/Performance/Conceptual/EnergyGuide-iOS/PrioritizeWorkWithQoS.html
  */
 
 import UIKit
@@ -50,13 +52,15 @@ class ViewController: UIViewController {
     //1.- Create a new dispatch queue:
     //The only thing you need to provide is a unique label for the queue, and that’s all.
     let queue = DispatchQueue(label: "com.richimf.myqueue")
+    let queue1 = DispatchQueue(label: "com.richimf.queue1", qos: DispatchQoS.userInitiated)
+    let queue2 = DispatchQueue(label: "com.richimf.queue2", qos: DispatchQoS.userInitiated)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //this for cycle runs in the background
         //2.- Execute que synchronously (sync) or asynchronously (async)
-        queue.async {
+        /*queue.async {
             for i in 0..<10 {
                 print("numero \(i)")
             }
@@ -65,8 +69,21 @@ class ViewController: UIViewController {
         //For cycle runs in the main queue
         for i in 0..<10 {
             print("2- numero \(i)")
+        }*/
+        
+        //Both queues runs simultaneously, 11, 22, 33, 44...
+        //this happens if both have same priority
+        queue1.async {
+            for i in 0..<10 {
+                print("prioridad queue 1 \(i)")
+            }
         }
         
+        queue2.async {
+            for i in 0..<10 {
+                print("prioridad queue 2 \(i)")
+            }
+        }
         
         
         // Do any additional setup after loading the view, typically from a nib.
