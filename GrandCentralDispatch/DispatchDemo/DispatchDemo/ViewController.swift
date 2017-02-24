@@ -54,11 +54,13 @@ class ViewController: UIViewController {
     let queue = DispatchQueue(label: "com.richimf.myqueue")
     let queue1 = DispatchQueue(label: "com.richimf.queue1", qos: DispatchQoS.userInitiated)
     let queue2 = DispatchQueue(label: "com.richimf.queue2", qos: DispatchQoS.utility)
+    let queueConcurrent = DispatchQueue(label: "com.richimf.anotherQueue", qos: .utility, attributes: .concurrent)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //this for cycle runs in the background
+        //**** HELLOW QUEUES EXMAPLE ****//
+        //This for cycle runs in the background
         //2.- Execute que synchronously (sync) or asynchronously (async)
         /*queue.async {
             for i in 0..<10 {
@@ -71,9 +73,11 @@ class ViewController: UIViewController {
             print("2- numero \(i)")
         }*/
         
+        
+        //**** PRIORITY EXMAPLE ****//
         //Both queues runs simultaneously, 11, 22, 33, 44...
-        //this happens if both have same priority, example: .userInitiated
-        queue1.async {
+        //This happens if both have same priority, example: .userInitiated
+        /*queue1.async {
             for i in 0..<10 {
                 print("userInitiated queue 1 \(i)")
             }
@@ -85,10 +89,34 @@ class ViewController: UIViewController {
             }
         }
         
-        //we see that the main queue has a high priority by default
+        //We see that the main queue has a high priority by default
         for i in 1000..<1010 {
             print("Ⓜ️", i)
+        }*/
+        
+        //**** CONCURRENT EXMAPLE ****//
+        //notice, we are using the same queue
+        //this queue will perform three taks at the same time
+        //without "attributes: .concurrent", this task will perform one by one
+        queueConcurrent.async {
+            for i in 0..<10 {
+                print("CONCURRENT queue 😛 \(i)")
+            }
         }
+        
+        queueConcurrent.async {
+            for i in 0..<10 {
+                print("CONCURRENT queue 💩\(i)")
+            }
+        }
+        
+        queueConcurrent.async {
+            for i in 0..<10 {
+                print("CONCURRENT queue 😡\(i)")
+            }
+        }
+       
+        
     }
     
     override func didReceiveMemoryWarning() {
