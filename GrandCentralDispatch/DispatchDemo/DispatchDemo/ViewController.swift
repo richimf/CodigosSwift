@@ -52,10 +52,12 @@ class ViewController: UIViewController {
     //1.- Create a new dispatch queue:
     //The only thing you need to provide is a unique label for the queue, and that’s all.
     let queue = DispatchQueue(label: "com.richimf.myqueue")
-    let queue1 = DispatchQueue(label: "com.richimf.queue1", qos: DispatchQoS.userInitiated)
-    let queue2 = DispatchQueue(label: "com.richimf.queue2", qos: DispatchQoS.utility)
-    let queueConcurrent = DispatchQueue(label: "com.richimf.anotherQueue", qos: .utility, attributes: .concurrent)
+    let queue1 = DispatchQueue(label: "com.richimf.priorityQueue1", qos: DispatchQoS.userInitiated)
+    let queue2 = DispatchQueue(label: "com.richimf.priorityQueue2", qos: DispatchQoS.utility)
+    let queueConcurrent = DispatchQueue(label: "com.richimf.concurrentQueue", qos: .utility, attributes: .concurrent)
     var inactiveQueue: DispatchQueue! // 1.- Declare inactiveQueue
+    let delayQueue = DispatchQueue(label: "com.richimf.delayedQueue", qos: .userInitiated)
+    let additionalTime: DispatchTimeInterval = .seconds(3)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +73,9 @@ class ViewController: UIViewController {
         
         //**** INACTIVE QUEUE EXMAPLE ****//
         inactivesQueue()
+        
+        //**** DELAYED QUEUE EXMAPLE ****//
+        delayedQueues()
     }
     
     func helloWorldQueues(){
@@ -159,6 +164,15 @@ class ViewController: UIViewController {
             for i in 0..<10 {
                 print("INACTIVE queue actived 😛\(i)")
             }
+        }
+    }
+    
+    func delayedQueues(){
+        print("show date: ")
+        print(Date())
+        delayQueue.asyncAfter(deadline: .now() + additionalTime) {
+            print("again after 2 seconds: ")
+            print(Date())
         }
     }
     
