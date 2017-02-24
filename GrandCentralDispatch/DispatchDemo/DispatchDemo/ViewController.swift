@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     //The only thing you need to provide is a unique label for the queue, and that’s all.
     let queue = DispatchQueue(label: "com.richimf.myqueue")
     let queue1 = DispatchQueue(label: "com.richimf.queue1", qos: DispatchQoS.userInitiated)
-    let queue2 = DispatchQueue(label: "com.richimf.queue2", qos: DispatchQoS.userInitiated)
+    let queue2 = DispatchQueue(label: "com.richimf.queue2", qos: DispatchQoS.utility)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,21 +72,23 @@ class ViewController: UIViewController {
         }*/
         
         //Both queues runs simultaneously, 11, 22, 33, 44...
-        //this happens if both have same priority
+        //this happens if both have same priority, example: .userInitiated
         queue1.async {
             for i in 0..<10 {
-                print("prioridad queue 1 \(i)")
+                print("userInitiated queue 1 \(i)")
             }
         }
         
         queue2.async {
             for i in 0..<10 {
-                print("prioridad queue 2 \(i)")
+                print("utility queue 2 \(i)")
             }
         }
         
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        //we see that the main queue has a high priority by default
+        for i in 1000..<1010 {
+            print("Ⓜ️", i)
+        }
     }
     
     override func didReceiveMemoryWarning() {
