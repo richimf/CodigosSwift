@@ -55,27 +55,39 @@ class ViewController: UIViewController {
     let queue1 = DispatchQueue(label: "com.richimf.priorityQueue1", qos: DispatchQoS.userInitiated)
     let queue2 = DispatchQueue(label: "com.richimf.priorityQueue2", qos: DispatchQoS.utility)
     let queueConcurrent = DispatchQueue(label: "com.richimf.concurrentQueue", qos: .utility, attributes: .concurrent)
-    var inactiveQueue: DispatchQueue! // 1.- Declare inactiveQueue
+    var inactiveQueue: DispatchQueue!  // 1.- Declare inactiveQueue
     let delayQueue = DispatchQueue(label: "com.richimf.delayedQueue", qos: .userInitiated)
     let additionalTime: DispatchTimeInterval = .seconds(3)
+    
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //**** HELLOW QUEUES EXMAPLE ****//
+        //**** HELLOW QUEUES EXAMPLE ****//
         helloWorldQueues()
         
-        //**** PRIORITY EXMAPLE ****//
+        //**** PRIORITY EXAMPLE ****//
         priorityQueues()
         
-        //**** CONCURRENT EXMAPLE ****//
+        //**** CONCURRENT EXAMPLE ****//
         concurrentQueues()
         
-        //**** INACTIVE QUEUE EXMAPLE ****//
+        //**** INACTIVE QUEUE EXAMPLE ****//
         inactivesQueue()
         
-        //**** DELAYED QUEUE EXMAPLE ****//
+        //**** DELAYED QUEUE EXAMPLE ****//
         delayedQueues()
+        
+        //**** ACCESSING GLOBAL QUEUES EXAMPLE ****//
+        accessingQueues()
+        
+        //**** ACCESSING THE MAIN QUEUE EXAMPLE ****//
+        //accessingMAINQueue()
+        
+        //Example main queue
+        downloadImageAndShowIt()
+        
     }
     
     func helloWorldQueues(){
@@ -174,6 +186,42 @@ class ViewController: UIViewController {
             print("again after 2 seconds: ")
             print(Date())
         }
+    }
+    
+    func accessingQueues(){
+        //Accessing a global queue is as simple as that:
+        //let globalQueue = DispatchQueue.global()
+        
+        //It is possible to set qos, if you not set it, que queue is setted to "default" value
+        let globalQueue = DispatchQueue.global(qos: .userInitiated)
+
+        //use global queuse as any other
+        globalQueue.async {
+            for i in 0..<10 {
+                print("GLOBAL queue 😛\(i)")
+            }
+        }
+    }
+    
+    //Main queue basic form
+    func accessingMAINQueue(){
+        DispatchQueue.main.async {
+            // Do something
+        }
+    }
+    
+    //Example of downloading image
+    func downloadImageAndShowIt() {
+        let imageURL: URL = URL(string: "https://www.wired.com/wp-content/uploads/2015/09/google-logo.jpg")!
+        
+        (URLSession(configuration: URLSessionConfiguration.default)).dataTask(with: imageURL, completionHandler: { (imageData, response, error) in
+            if let data = imageData {
+                print("Did download image data")
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: data)
+                }
+            }
+        }).resume()
     }
     
     override func didReceiveMemoryWarning() {
