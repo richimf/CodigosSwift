@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DispatchDemo
 //
-//  Created by Ricardo Montesinos Fernandez on 2/24/17.
+//  Created by Richimf on 2/24/17.
 //  Copyright © 2017 richimf. All rights reserved.
 //
 
