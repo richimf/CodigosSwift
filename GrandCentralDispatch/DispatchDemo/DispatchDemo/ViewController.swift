@@ -55,6 +55,7 @@ class ViewController: UIViewController {
     let queue1 = DispatchQueue(label: "com.richimf.queue1", qos: DispatchQoS.userInitiated)
     let queue2 = DispatchQueue(label: "com.richimf.queue2", qos: DispatchQoS.utility)
     let queueConcurrent = DispatchQueue(label: "com.richimf.anotherQueue", qos: .utility, attributes: .concurrent)
+    var inactiveQueue: DispatchQueue! // 1.- Declare inactiveQueue
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +99,7 @@ class ViewController: UIViewController {
         //notice, we are using the same queue
         //this queue will perform three taks at the same time
         //without "attributes: .concurrent", this task will perform one by one
-        queueConcurrent.async {
+        /*queueConcurrent.async {
             for i in 0..<10 {
                 print("CONCURRENT queue 😛 \(i)")
             }
@@ -114,8 +115,36 @@ class ViewController: UIViewController {
             for i in 0..<10 {
                 print("CONCURRENT queue 😡\(i)")
             }
+        }*/
+        
+        //**** INACTIVE QUEUE EXMAPLE ****//
+        /*The attributes parameter can also accept another value named initiallyInactive.
+          By using that, the execution of the tasks doesn’t start automatically,
+          instead the developer has to trigger the execution. */
+        
+        //Initialization of inactiveQueue
+        //let anotherQueue = DispatchQueue(label: "com.richimf.queueInactive", qos: .utility, attributes: .initiallyInactive)
+        
+        //init a concurrent queue initially inactive
+        let anotherQueue = DispatchQueue(label: "com.richimf.queueInactive", qos: .userInitiated, attributes: [.concurrent, .initiallyInactive])
+        
+        inactiveQueue = anotherQueue
+        //activamos el inactiveQueue:
+        if let queue = inactiveQueue {
+            queue.activate()
         }
-       
+        
+        inactiveQueue.async {
+            for i in 0..<10 {
+                print("INACTIVE queue actived 😡\(i)")
+            }
+        }
+        
+        inactiveQueue.async {
+            for i in 0..<10 {
+                print("INACTIVE queue actived 😛\(i)")
+            }
+        }
         
     }
     
