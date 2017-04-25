@@ -59,6 +59,12 @@ enum Theme: Int {
     //3 set bar style
     UINavigationBar.appearance().barStyle = barStyle
     UINavigationBar.appearance().setBackgroundImage(navigationBackgroundImage, for: .default)
+    
+    //4 Customize navigation bar back indicator
+    //Here you’re simply setting the image and transition mask image to be used as the back indicator.
+    UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backArrow")
+    UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backArrowMaskFixed")
+
   }
   
 }
