@@ -1,7 +1,9 @@
 //
 /*
  In iOS, Apple provides two ways to do multitasking:
+ 
  The Grand Central Dispatch (GCD) and NSOperationQueue frameworks.
+ 
  Both of them work perfectly when it’s time to assign tasks to different threads, or different queues other than the main one.
  Which one should be use is a subjective matter, but in this tutorial we’ll focus on the first one, the GCD.
  *No matter what,there’s one rule that should be always respected:
@@ -12,10 +14,13 @@
  A "queue" is actually a "block of code" that can be executed synchronously or asynchronously,
  either on the main or on a background thread.
  
- Another important concept is the "work item". A work item is literally a "block of code" that is either written along
+ Another important concept is the "work item". 
+ A work item is literally a "block of code" that is either written along 
  with the queue creation, or it gets assigned to a queue and it can be used more than once (reused).
+ 
  The work item is what you think of exactly: It’s the code that a dispatch queue will run.
  The execution of work items in a queue also follows the FIFO pattern.
+ 
  This execution can be synchronous or asynchronous. In the synchronous case,
  the running app does not exit the code block of the item until the execution finishes.
  On the other hand, when queues are scheduled to run asynchronously,
