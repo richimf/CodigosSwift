@@ -8,6 +8,13 @@
  - powering prefix matching in text fields
  - formula representations
  */
+/*
+ Node:
+ We define a node class with:
+ - value
+ - left_Node
+ - right_Node
+ */
 
 /*
  Binary Search Tree:
@@ -18,17 +25,7 @@
  Each children is a Node, if a Node has no children it is known as a Leaf.
  
  A BT is always sorted.
- */
-
-/*
- Node:
- We define a node class with:
- - value
- - left_Node
- - right_Node
- */
-
-/*
+ 
  Insertion:
  We start from root node.
  
@@ -44,7 +41,6 @@
  
  It´s always one possible place where the new element can be inserted in the tree.
  It´s pretty quick, it takes O(h) time, where h is the height of the tree.
- 
  */
 import UIKit
 
@@ -66,6 +62,14 @@ class Node<T> {
 enum BinaryTree<T>{
     case empty
     indirect case node(BinaryTree, T, BinaryTree)
+    
+    //Insertion in BT
+    mutating func insert(newValue: T){
+        guard case .node(var left, let value, var right) = self else {
+            self = .node(.empty, newValue, .empty)
+            return
+        }
+    }
 }
 
 //Building a BT
@@ -97,12 +101,6 @@ let timesRight = BinaryTree.node(minus4, "*", divide3andB)
 
 // root node
 let tree = BinaryTree.node(timesLeft, "+", timesRight)
-
-
-
-//*----> SEARCH <----*//
-
-
 
 
 
