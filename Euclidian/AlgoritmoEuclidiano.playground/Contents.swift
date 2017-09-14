@@ -3,12 +3,6 @@
 import UIKit
 
 //Euclidian Algorithm
-
-//a,b positive integers
-
-let gdc = euclidian(a:120 ,b:500)
-
-
 func euclidian(a:Int, b:Int)->Int{
     
     var x = a
@@ -23,5 +17,8 @@ func euclidian(a:Int, b:Int)->Int{
     
     return x
 }
+
+//a,b positive integers
+let gdc = euclidian(a:500 ,b:120)
 
 print("Valor euclidiano es: \(gdc)")
