@@ -74,7 +74,7 @@ public class LinkedList {
         //if tailNode is not nil, that means there is something in the linkedlist already.
         if let tailNode = tail {
             //configure the new item to point to the tail of the list as it's previous item.
-            newNode.previous = tailNode // T <--- N
+            newNode.previous = tailNode // N <--- T
             tailNode.next = newNode     // T ---> N
         } else {
             //if tail is nil, means theres nothing in the list, so newNode is the first one
@@ -134,6 +134,7 @@ public class LinkedList {
         head = nil
         tail = nil
     }
+    
 }
 
 let milist = LinkedList()
