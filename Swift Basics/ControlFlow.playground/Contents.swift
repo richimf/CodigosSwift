@@ -91,6 +91,27 @@ rowLoop: for row in 0..<8{
     }
 }
 
+//ARRAYS AND LOOPS
+
+let names = ["richi","cheneta","toby"]
+for name in names {
+    print(name)
+}
+
+
+let fruits = ["apple":5, "banana":7, "coco":10]
+for (name,value) in fruits{
+    print(name)
+    print(value)
+}
+
+
+
+
+
+
+
+
 
 
 

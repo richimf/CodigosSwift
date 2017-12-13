@@ -150,6 +150,56 @@ let beta = 10
 let min = alfa < beta ? alfa : beta
 let max = alfa > beta ? alfa : beta
 
+//-----------> SWITCH STATEMENTS <-----------//
+
+let number = 10
+switch number {
+case 0:
+    print("zero")
+default:
+    print("non-zero")
+}
+
+let animal = "Dog"
+switch animal{
+case "Cat","Dog":
+    print("animal casero")
+default:
+    print("animal raro")
+}
+
+let hour = 12
+let time:String
+
+switch hour {
+case 1,2,3,4,5,6,7,8,9,10,11:
+    time = "morning"
+case 12...24:
+    time = "afternoon"
+default:
+    time = "non-morning"
+}
+print(time)
+
+let coords = (x:10, y:20)
+
+switch coords {
+case (0,0):
+    print("origin")
+default:
+    print("\(coords.x) \(coords.y)")
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
