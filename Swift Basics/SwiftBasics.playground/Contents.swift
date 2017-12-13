@@ -1,53 +1,154 @@
-//: Playground - noun: a place where people can play
-
-import UIKit
-
-//*----------------------| BITWISE OPERATIONS |----------------------*//
-
-//-----------> NOT OPERATOR ~ <-----------//
-// Inverts all bits in a number
-let myBits: UInt8 = 0b00001111 //8 bits integer
-let inverted = ~myBits //inverted = 0b11110000
-
-//-----------> AND OPERATOR & <-----------//
-// Combines the bits of two numbers
-let firstNumbers: UInt8 = 0b11111100
-let lastNumbers: UInt8  = 0b00111111
-let numberInBoth = firstNumbers & lastNumbers  // equals 00111100
-
-//-----------> OR OPERATOR | <-----------//
-// Combines the bits of two numbers
-let someBits: UInt8 = 0b10110010
-let moreBits: UInt8 = 0b01011110
-let combinedbits = someBits | moreBits  // equals 11111110
-
-//-----------> XOR OPERATOR ^ <-----------//
-// Compares the bits of two numbers.
-// If both numbers are the same, put zero, else, put one.
-let firstBits: UInt8 = 0b00010100
-let otherBits: UInt8 = 0b00000101
-let outputBits = firstBits ^ otherBits  // equals 00010001
-
-
-//-----------> SHIT OPERATIONS <-----------//
-//It shifts the binary digits left or fight, after that, it returns to its decimal number.
-/* For example, the decimal number 14 in binary, padded to 8 digits, is 00001110.
-   Shifting this left by two places results in 00111000, which is 56 in decimal.
+/*import UIKit
+ The UIKit framework provides the required infrastructure for your iOS or tvOS apps.
+ It provides the window and view architecture for implementing your interface, the event handling infrastructure for delivering Multitouch
+ and other types of input to your app, and the main run loop needed to manage interactions among the user, the system, and your app. Other
+ features offered by the framework include animation support, document support, drawing and printing support, information about the current
+ device, text management and display, search support, accessibility support, app extension support, and resource management.
  */
 
-//SHIFT LEFT: [value] << [number of positions to move]
-//SHIFT RIGHT:        >>
+//*----------------------| SWIFT BASICS |----------------------*//
 
-1 << 3
-32 >> 2
+//-----------> CONSTANTS <-----------//
+let myConstant:Int = 10
+let pi:Double = 3.1416
 
-//EXAMPLE:
-let pink: UInt32 = 0xCC6699
-let redComponent = (pink & 0xFF0000) >> 16    // redComponent is 0xCC, or 204
-let greenComponent = (pink & 0x00FF00) >> 8   // greenComponent is 0x66, or 102
-let blueComponent = pink & 0x0000FF           // blueComponent is 0x99, or 153
+//-----------> VARIABLES <-----------//
+var myMoney = 1_300
+var 😆 = "jajajaja"
+var variable: Int = 20
+
+var myVariable: Int
+myVariable = 10
+
+//Int types:
+// Int is represented with 64 bits or 32 bits, depending on the system.
+// But you can use Int8, Int16, Int32, Int64 to consume 1,2,4 and 8 bytes of storage respectively.
+// Each of these types use 1-bit to represent the sign.
+var myInt8:Int8 = 127 // from -128 to 127 (max value).
+var myInt8Unsigned:UInt8 = 127 // just positive values from 0 to 255 (max value).
+var myInt16:Int16 = 32767
+var myInt32:Int32
+var myInt64:Int64
 
 
+//-----------> INCREMENT/DECREMENT <-----------//
+/*
+ Add and assign: +=
+ Subtract and assign: -=
+ Multiply and assign: *=
+ Divide and assign: /=
+ */
+var counter: Int = 1
+counter += 1
+counter += 1
+counter -= 1
+counter -= 1
+counter *= 3
+counter *= 3
+counter /= 2
+
+//-----------> TYPE CONVERSION <-----------//
+
+var integer: Int = 100
+var decimal: Double = 18.4
+integer = Int(decimal) //the integer part of a decimal number
+
+var five = "5.1"
+var fiveToInt = Int(five)
+var fiveToDecimal = Double(five)
+
+let number1:Int = 16
+let number2:Int = 30
+//ERROR: let time:Double = number1 + number2, Double(...) it's mandatory
+let total:Double = Double(number1 + number2)
+
+//"TYPE INFERENCE", it means it's not necessary to declare the Data Type.
+let myInferenceVar = 3.1416
+
+let iwantaDouble = 3 //this is not a double, it is an Int
+let nowItsaDouble: Double = 3
+let anotherDouble = 3 as Double
+
+//-----------> STRINGS <-----------//
+let vocal: Character = "a"
+let emoticon: Character = "😆"
+let dogName: String = "Toby"
+let justDogName = "Toby"
+
+let pollo = "Pollo 🐓"
+let concatenation = pollo+" \(emoticon)"
+
+var message = "Hi my name is: "
+let myname = "Richie"
+message += myname // message = message + myname
+
+ let exclamationMark: Character = "!"
+message += String(exclamationMark)
+
+//-----------> TUPLES <-----------//
+/*
+ A tuple is an ordered set of objects, like (2,3).
+ Notice the difference between Set and Tuple, a Set is not ordered and there are not repeated elements.
+ */
+let coordinates: (Int, Int) = (2,3) //(Int, Int)
+let coordinates2 = (3,4.5) //(Int, Double)
+let anotherCoordinates = (4.3,2.9) //(Double,Double)
+
+let x = coordinates.0
+let y = coordinates.1
+
+let x2 = coordinates2.0
+let y2 = coordinates2.1
+
+let xa = anotherCoordinates.0
+let ya = anotherCoordinates.1
+
+//Tuples with names:
+let person = (name:"Richie", lastname:"Mon")
+let name = person.0
+let lastname = person.1
+
+//Multiple declaration with tuples
+let coordinates3D = (a:2, b:3, c:4)
+let (a, b, c) = coordinates3D //If you want to access multiple parts of the tuple at the same time
+print(a)
+print(b)
+print(c)
+
+//If you want to ignore a value in a tuple, just use underscore _
+let (aa,bb,_) = coordinates3D
+
+
+//-----------> CONTROL FLOW <-----------//
+let yes: Bool = true
+let no: Bool = false
+
+let areBothTheSame = (yes == no) //false
+let areBothDifferent = (yes != no) //true
+let areBothDifferent2 = !(yes == no) //true
+
+let alsoTrue = !(1 == 2) //true
+let isOneGreaterThanTwo = (1 > 2) //false
+
+//GATES
+let AND = true && true //true, just if both of them are true
+let AND2 = true && false //false
+
+let OR = true || false // true, if one is true, the result is true otherwise is false
+let OR2 = true || true // true
+let OR3 = false || false // false
+
+let andTrue = 1 < 2 && 4 > 3 // true && true equals true
+let andFalse = 1 < 2 && 3 > 4
+
+let andOr = (1 < 2 && 3 > 4) || 1 < 4 // (true and false) -> false, (false OR true) -> true
+let order = "cat" < "dog" //check alphabetically
+
+//-----------> TERNARY CONDITIONAL OPERATOR <-----------//
+let alfa = 5
+let beta = 10
+let min = alfa < beta ? alfa : beta
+let max = alfa > beta ? alfa : beta
 
 
 
