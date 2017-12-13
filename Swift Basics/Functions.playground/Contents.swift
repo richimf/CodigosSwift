@@ -63,6 +63,26 @@ var val = 5 //como si fuera por referencia
 increment(value: &val)
 print(val)
 
+//-----------> VARIADIC PARAMETERS <-----------//
+/*
+ A variadic parameter is used to pass an unknown number of parameters to a function.
+ You use 3 dots ... after the type to mark it as variadic.
+ This parameter is considered to be an array.
+ */
+
+func sum(numbers:Int...)->Int{
+    var total = 0
+    for n in numbers{
+        total += n
+    }
+    return total
+}
+print(sum(numbers: 1,2,3,4,5,6,7,8,9,10))
+
+
+
+
+
 
 
 
