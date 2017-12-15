@@ -149,6 +149,7 @@ struct Level {
 }
 var val = Level(id: 1, boss: "jefe", unlocked: true)
 val.unlocked = false
+
 /*
  Note: Do not confuse property observers with getters and setters.
  A stored property can have a didSet and/or a willSet observer.
@@ -156,6 +157,35 @@ val.unlocked = false
  These, even though the syntax is similar, are completely different concepts!
  */
 
+
+//----------> LAZY PORPERTIES <---------//
+/*
+ If you have a property that might take some time to calculate,
+ you don’t want to slow things down until you actually need the property.
+ Say hello to the lazy stored property. This could be useful for such things
+ as downloading a user’s profile picture or making a serious calculation.
+
+ Lazy Property needs to be a Variable Var instead of a Constant Let.
+ A Lazy Property gets called when it is requested and it is  calculated just once.
+ For comparison, circumference is a computed property and therefore gets calculated every time it’s accessed.
+ Because we are in a Struct we need to use "mutating" in order to "refresh" the value of circumference.
+ */
+struct Circle {
+    lazy var pi = {
+        return ((4.0 * atan(1.0 / 5.0)) - atan(1.0 / 239.0)) * 4.0
+    }()
+    var radius = 0.0
+    var circumference: Double {
+        mutating get {
+            return pi * radius * 2
+        }
+    }
+    init (radius: Double) {
+        self.radius = radius
+    }
+}
+var circle = Circle(radius: 5) // got a circle, pi has not been run
+var circumferencia = circle.circumference //circumference calls pi (pi is calculated just once and no more).
 
 //----------> EQUATABLE PROTOCOL  <---------//
 //Implement your own "Int". Comparing two values:
