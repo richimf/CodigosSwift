@@ -108,6 +108,60 @@ a == b // true
 a != b // false
 
 
+//-----------> PROPERTY OBSERVERS <-----------//
+/*
+ You’ll need a way to listen to property changes.
+ Thankfully, there are a couple of property observers that get called before and after property changes.
+ You can use willSet and didSet similar to the way you used set and get.
+ Also, keep in mind that the willSet and didSet observers are not called when a property is set during initialization;
+ willSet is called just before the value is stored.
+ didSet is called immediately after the new value is stored.
+ */
+struct Hola {
+    var valor:Int {
+        willSet{
+            //al cambiar el valor, este observer es llamado y aun conserva el valor anterior
+            print("willSet:")
+            print(valor)
+        }
+        didSet{
+            //se ejecuta este observer con el nuevo valor
+            print("didSet:")
+            print(valor)
+        }
+    }
+}
+var mihola = Hola(valor: 6)
+mihola.valor = 4
+mihola.valor = 8
+
+struct Level {
+    static var highestLevel = 1 //static stores the value into memory
+    let id: Int
+    var boss: String
+    var unlocked: Bool {
+        //didSet gets called after the value has been set.
+        /*Even though you’re inside an instance of the type, you still have to access the type properties with
+         their full names like Level.highestLevel rather than just highestLevel alone.*/
+        didSet {
+            print(Level.highestLevel)
+            if unlocked && id > Level.highestLevel {
+                Level.highestLevel = id
+            }
+        } }
+}
+var val = Level(id: 1, boss: "jefe", unlocked: true)
+val.unlocked = false
+/*
+ Note: Do not confuse property observers with getters and setters.
+ A stored property can have a didSet and/or a willSet observer.
+ A computed property has a getter and optionally a setter.
+ These, even though the syntax is similar, are completely different concepts!
+ */
+
+
+
+
 
 
 
