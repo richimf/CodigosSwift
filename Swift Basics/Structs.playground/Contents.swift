@@ -78,35 +78,8 @@ var myTV = TV(width: 10.0, height: 20.0)
 myTV.screenSize // 22, usa el get
 //myTV.screenSize = 70 //falla, porque screenSize es read-only
 
-myTV.screenSize2 //22, usa el otro get
 myTV.screenSize2 = 70 //, usa el set, y pone 70 a "newValue", newValue = 70
-
-
-//----------> EQUATABLE PROTOCOL  <---------//
-//Implement your own "Int". Comparing two values:
-struct MyInt {
-    var value: Int?
-}
-var aaaa = MyInt(value: 5)
-var bbbb = MyInt(value: 5)
-//aaaa == bbbb //error: binary operator '==' cannot be applied to two 'MyInt' operands
-
-//Creating your own Struct with Equatable protocol, now you can compare two values
-struct MyInteger<T:SignedNumeric>{ //T could be an Int, Double, Float, etc...
-    let value:T
-}
-extension MyInteger: Equatable { // a == b
-    //This function its mandatory in Equatable protocol
-    static func ==<T>(a: MyInteger<T>, b: MyInteger<T>) -> Bool {
-        return a.value == b.value
-    }
-}
-let a = MyInteger<Double>(value: 1.0)
-let b = MyInteger<Double>(value: 2.0)
-
-a == b // true
-a != b // false
-
+myTV.height //new height
 
 //-----------> PROPERTY OBSERVERS <-----------//
 /*
@@ -182,6 +155,32 @@ val.unlocked = false
  A computed property has a getter and optionally a setter.
  These, even though the syntax is similar, are completely different concepts!
  */
+
+
+//----------> EQUATABLE PROTOCOL  <---------//
+//Implement your own "Int". Comparing two values:
+struct MyInt {
+    var value: Int?
+}
+var aaaa = MyInt(value: 5)
+var bbbb = MyInt(value: 5)
+//aaaa == bbbb //error: binary operator '==' cannot be applied to two 'MyInt' operands
+
+//Creating your own Struct with Equatable protocol, now you can compare two values
+struct MyInteger<T:SignedNumeric>{ //T could be an Int, Double, Float, etc...
+    let value:T
+}
+extension MyInteger: Equatable { // a == b
+    //This function its mandatory in Equatable protocol
+    static func ==<T>(a: MyInteger<T>, b: MyInteger<T>) -> Bool {
+        return a.value == b.value
+    }
+}
+let a = MyInteger<Double>(value: 1.0)
+let b = MyInteger<Double>(value: 2.0)
+
+a == b // true
+a != b // false
 
 
 
