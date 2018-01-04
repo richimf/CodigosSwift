@@ -2,6 +2,11 @@
 
 //*----------------------| HOW TO COMMENT |----------------------*//
 
+// MARK: - A mark comment lives here.
+// TODO:
+// FIXME:
+
+
 /**
  General description
  
