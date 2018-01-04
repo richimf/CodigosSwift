@@ -95,12 +95,12 @@ struct Hola {
         willSet{
             //al cambiar el valor, este observer es llamado y aun conserva el valor anterior
             print("willSet:")
-            print(valor)
+            print(valor) //6
         }
         didSet{
             //se ejecuta este observer con el nuevo valor
             print("didSet:")
-            print(valor)
+            print(valor) //4
         }
     }
 }
