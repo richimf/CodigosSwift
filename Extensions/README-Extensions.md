@@ -10,7 +10,7 @@ Core Data usualmente guarda los datos en un archivo conocido como "App's persist
 #### Group ID ####
 Para poder utilizar el **Shared Container** debemos crear un *APP_GROUP_ID* y este ID se debe compartir en cada *Target* de la App.
 En el proyecto de Xcode seleccionamos el Target de la App y el Target del Widget o Extension, esto se debe hacer para ambos.
-<img src="https://github.com/richimf/BitmeTickerMacOs/blob/master/screenshot.jpg" width="550">
+<img src="https://github.com/richimf/CodigosSwift/blob/master/Extensions/ActivateGroupId.png" width="550">
 
 Luego, podemos utilizar el Group ID, por ejemplo:
 
@@ -59,8 +59,8 @@ En donde tenemos tres opciones:
 Cuando queremos utilizar un framework en un Extension, debemos indicar en las opciones del Target y tambien agregarlo al Extension.
 Veamos las siguientes imágenes.
 
-<img src="https://github.com/richimf/BitmeTickerMacOs/blob/master/screenshot.jpg" width="550">
-<img src="https://github.com/richimf/BitmeTickerMacOs/blob/master/screenshot.jpg" width="550">
+<img src="https://github.com/richimf/CodigosSwift/blob/master/Extensions/Include%20Framework%20with%20Extensions.png" width="550">
+<img src="https://github.com/richimf/CodigosSwift/blob/master/Extensions/Include%20Framework%20with%20Extensions%20in%20Widget.png" width="550">
 
 
 
