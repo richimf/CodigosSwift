@@ -1,0 +1,1018 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A20A8901BC08D9D003B3FC5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782C73761A0B3F58003B66E5 /* NotificationCenter.framework */; };
+		2A20A8931BC08D9D003B3FC5 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A20A8921BC08D9D003B3FC5 /* TodayViewController.swift */; };
+		2A20A8961BC08D9D003B3FC5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A20A8941BC08D9D003B3FC5 /* MainInterface.storyboard */; };
+		2A20A89A1BC08D9D003B3FC5 /* RWTracker Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2A20A88F1BC08D9D003B3FC5 /* RWTracker Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2AACE9DB1BC185F400FCA0BF /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782103B61A0735F800EE7D8E /* CoreDataStack.swift */; };
+		2AACE9DC1BC185F900FCA0BF /* RWTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA3141A0306B0002BA75C /* RWTracker.xcdatamodeld */; };
+		7821038A1A07154400EE7D8E /* RWFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 782103891A07154400EE7D8E /* RWFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		782103901A07154500EE7D8E /* RWFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782103851A07154400EE7D8E /* RWFetcher.framework */; };
+		782103991A07154500EE7D8E /* RWFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782103981A07154500EE7D8E /* RWFetcherTests.swift */; };
+		7821039C1A07154500EE7D8E /* RWFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782103851A07154400EE7D8E /* RWFetcher.framework */; };
+		7821039D1A07154500EE7D8E /* RWFetcher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 782103851A07154400EE7D8E /* RWFetcher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		782103A61A07156100EE7D8E /* RWFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782103A51A07156100EE7D8E /* RWFetcher.swift */; };
+		782103A71A07275B00EE7D8E /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA33C1A030713002BA75C /* GTMNSString+HTML.m */; };
+		782103A81A07276200EE7D8E /* MWFeedInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA33E1A030713002BA75C /* MWFeedInfo.m */; };
+		782103A91A07276200EE7D8E /* MWFeedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA3401A030713002BA75C /* MWFeedItem.m */; };
+		782103AA1A07276200EE7D8E /* MWFeedParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA3431A030713002BA75C /* MWFeedParser.m */; };
+		782103AB1A07276200EE7D8E /* NSDate+InternetDateTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA3451A030713002BA75C /* NSDate+InternetDateTime.m */; };
+		782103AC1A07276200EE7D8E /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA3471A030713002BA75C /* NSString+HTML.m */; };
+		782103AD1A07276200EE7D8E /* NSString+XMLEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA3491A030713002BA75C /* NSString+XMLEntities.m */; };
+		782103B21A0728AA00EE7D8E /* MWFeedParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 78CBA3421A030713002BA75C /* MWFeedParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		782103B71A0735F800EE7D8E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782103B61A0735F800EE7D8E /* CoreDataStack.swift */; };
+		786B8F4B1A0FCC27002B5F8E /* MWFeedItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 78CBA33F1A030713002BA75C /* MWFeedItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		786B8F4C1A0FCC2D002B5F8E /* MWFeedInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 78CBA33D1A030713002BA75C /* MWFeedInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78BC1DB21A100DE800A6FAF7 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BC1DB11A100DE800A6FAF7 /* SettingsTableViewController.swift */; };
+		78CBA3131A0306B0002BA75C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA3121A0306B0002BA75C /* AppDelegate.swift */; };
+		78CBA3161A0306B0002BA75C /* RWTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA3141A0306B0002BA75C /* RWTracker.xcdatamodeld */; };
+		78CBA3181A0306B0002BA75C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA3171A0306B0002BA75C /* MasterViewController.swift */; };
+		78CBA31A1A0306B0002BA75C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA3191A0306B0002BA75C /* DetailViewController.swift */; };
+		78CBA31D1A0306B0002BA75C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78CBA31B1A0306B0002BA75C /* Main.storyboard */; };
+		78CBA31F1A0306B0002BA75C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78CBA31E1A0306B0002BA75C /* Images.xcassets */; };
+		78CBA3221A0306B0002BA75C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78CBA3201A0306B0002BA75C /* LaunchScreen.xib */; };
+		78CBA32E1A0306B0002BA75C /* RWTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBA32D1A0306B0002BA75C /* RWTrackerTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A20A8981BC08D9D003B3FC5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78CBA3051A0306B0002BA75C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A20A88E1BC08D9D003B3FC5;
+			remoteInfo = "RWTracker Extension";
+		};
+		782103911A07154500EE7D8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78CBA3051A0306B0002BA75C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 782103841A07154400EE7D8E;
+			remoteInfo = RWFetcher;
+		};
+		782103931A07154500EE7D8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78CBA3051A0306B0002BA75C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78CBA30C1A0306B0002BA75C;
+			remoteInfo = RWTracker;
+		};
+		7821039A1A07154500EE7D8E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78CBA3051A0306B0002BA75C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 782103841A07154400EE7D8E;
+			remoteInfo = RWFetcher;
+		};
+		78CBA3281A0306B0002BA75C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78CBA3051A0306B0002BA75C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78CBA30C1A0306B0002BA75C;
+			remoteInfo = RWTracker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		782103A31A07154500EE7D8E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7821039D1A07154500EE7D8E /* RWFetcher.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		782C73851A0B3F58003B66E5 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2A20A89A1BC08D9D003B3FC5 /* RWTracker Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2A20A88F1BC08D9D003B3FC5 /* RWTracker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RWTracker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A20A8921BC08D9D003B3FC5 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		2A20A8951BC08D9D003B3FC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		2A20A8971BC08D9D003B3FC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A8B215B1BBF21D100B5A868 /* RWTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RWTracker.entitlements; sourceTree = "<group>"; };
+		2AACE9DD1BC1863300FCA0BF /* RWTracker Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "RWTracker Extension.entitlements"; sourceTree = "<group>"; };
+		782103851A07154400EE7D8E /* RWFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RWFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		782103881A07154400EE7D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		782103891A07154400EE7D8E /* RWFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWFetcher.h; sourceTree = "<group>"; };
+		7821038F1A07154500EE7D8E /* RWFetcherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RWFetcherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		782103971A07154500EE7D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		782103981A07154500EE7D8E /* RWFetcherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWFetcherTests.swift; sourceTree = "<group>"; };
+		782103A51A07156100EE7D8E /* RWFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RWFetcher.swift; sourceTree = "<group>"; };
+		782103B61A0735F800EE7D8E /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		782C73761A0B3F58003B66E5 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		78BC1DB11A100DE800A6FAF7 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		78CBA30D1A0306B0002BA75C /* RWTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78CBA3111A0306B0002BA75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78CBA3121A0306B0002BA75C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		78CBA3151A0306B0002BA75C /* RWTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RWTracker.xcdatamodel; sourceTree = "<group>"; };
+		78CBA3171A0306B0002BA75C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		78CBA3191A0306B0002BA75C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		78CBA31C1A0306B0002BA75C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		78CBA31E1A0306B0002BA75C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		78CBA3211A0306B0002BA75C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		78CBA3271A0306B0002BA75C /* RWTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RWTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78CBA32C1A0306B0002BA75C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78CBA32D1A0306B0002BA75C /* RWTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWTrackerTests.swift; sourceTree = "<group>"; };
+		78CBA33B1A030713002BA75C /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "GTMNSString+HTML.h"; path = "MWFeedParser/GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		78CBA33C1A030713002BA75C /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "GTMNSString+HTML.m"; path = "MWFeedParser/GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		78CBA33D1A030713002BA75C /* MWFeedInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWFeedInfo.h; path = MWFeedParser/MWFeedInfo.h; sourceTree = "<group>"; };
+		78CBA33E1A030713002BA75C /* MWFeedInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWFeedInfo.m; path = MWFeedParser/MWFeedInfo.m; sourceTree = "<group>"; };
+		78CBA33F1A030713002BA75C /* MWFeedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWFeedItem.h; path = MWFeedParser/MWFeedItem.h; sourceTree = "<group>"; };
+		78CBA3401A030713002BA75C /* MWFeedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWFeedItem.m; path = MWFeedParser/MWFeedItem.m; sourceTree = "<group>"; };
+		78CBA3411A030713002BA75C /* MWFeedParser_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWFeedParser_Private.h; path = MWFeedParser/MWFeedParser_Private.h; sourceTree = "<group>"; };
+		78CBA3421A030713002BA75C /* MWFeedParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWFeedParser.h; path = MWFeedParser/MWFeedParser.h; sourceTree = "<group>"; };
+		78CBA3431A030713002BA75C /* MWFeedParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWFeedParser.m; path = MWFeedParser/MWFeedParser.m; sourceTree = "<group>"; };
+		78CBA3441A030713002BA75C /* NSDate+InternetDateTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+InternetDateTime.h"; path = "MWFeedParser/NSDate+InternetDateTime.h"; sourceTree = "<group>"; };
+		78CBA3451A030713002BA75C /* NSDate+InternetDateTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+InternetDateTime.m"; path = "MWFeedParser/NSDate+InternetDateTime.m"; sourceTree = "<group>"; };
+		78CBA3461A030713002BA75C /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+HTML.h"; path = "MWFeedParser/NSString+HTML.h"; sourceTree = "<group>"; };
+		78CBA3471A030713002BA75C /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+HTML.m"; path = "MWFeedParser/NSString+HTML.m"; sourceTree = "<group>"; };
+		78CBA3481A030713002BA75C /* NSString+XMLEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+XMLEntities.h"; path = "MWFeedParser/NSString+XMLEntities.h"; sourceTree = "<group>"; };
+		78CBA3491A030713002BA75C /* NSString+XMLEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+XMLEntities.m"; path = "MWFeedParser/NSString+XMLEntities.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A20A88C1BC08D9D003B3FC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A20A8901BC08D9D003B3FC5 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		782103811A07154400EE7D8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7821038C1A07154500EE7D8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				782103901A07154500EE7D8E /* RWFetcher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78CBA30A1A0306B0002BA75C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7821039C1A07154500EE7D8E /* RWFetcher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78CBA3241A0306B0002BA75C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A20A8911BC08D9D003B3FC5 /* RWTracker Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2AACE9DD1BC1863300FCA0BF /* RWTracker Extension.entitlements */,
+				2A20A8921BC08D9D003B3FC5 /* TodayViewController.swift */,
+				2A20A8941BC08D9D003B3FC5 /* MainInterface.storyboard */,
+				2A20A8971BC08D9D003B3FC5 /* Info.plist */,
+			);
+			path = "RWTracker Extension";
+			sourceTree = "<group>";
+		};
+		782103861A07154400EE7D8E /* RWFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA3391A0306FE002BA75C /* MWFeedParser */,
+				782103891A07154400EE7D8E /* RWFetcher.h */,
+				782103871A07154400EE7D8E /* Supporting Files */,
+				782103A51A07156100EE7D8E /* RWFetcher.swift */,
+			);
+			path = RWFetcher;
+			sourceTree = "<group>";
+		};
+		782103871A07154400EE7D8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				782103881A07154400EE7D8E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		782103951A07154500EE7D8E /* RWFetcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				782103981A07154500EE7D8E /* RWFetcherTests.swift */,
+				782103961A07154500EE7D8E /* Supporting Files */,
+			);
+			path = RWFetcherTests;
+			sourceTree = "<group>";
+		};
+		782103961A07154500EE7D8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				782103971A07154500EE7D8E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		782C73751A0B3F58003B66E5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				782C73761A0B3F58003B66E5 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78CBA3041A0306B0002BA75C = {
+			isa = PBXGroup;
+			children = (
+				78CBA30F1A0306B0002BA75C /* RWTracker */,
+				78CBA32A1A0306B0002BA75C /* RWTrackerTests */,
+				782103861A07154400EE7D8E /* RWFetcher */,
+				782103951A07154500EE7D8E /* RWFetcherTests */,
+				2A20A8911BC08D9D003B3FC5 /* RWTracker Extension */,
+				782C73751A0B3F58003B66E5 /* Frameworks */,
+				78CBA30E1A0306B0002BA75C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		78CBA30E1A0306B0002BA75C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA30D1A0306B0002BA75C /* RWTracker.app */,
+				78CBA3271A0306B0002BA75C /* RWTrackerTests.xctest */,
+				782103851A07154400EE7D8E /* RWFetcher.framework */,
+				7821038F1A07154500EE7D8E /* RWFetcherTests.xctest */,
+				2A20A88F1BC08D9D003B3FC5 /* RWTracker Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78CBA30F1A0306B0002BA75C /* RWTracker */ = {
+			isa = PBXGroup;
+			children = (
+				2A8B215B1BBF21D100B5A868 /* RWTracker.entitlements */,
+				78CBA3121A0306B0002BA75C /* AppDelegate.swift */,
+				782103B61A0735F800EE7D8E /* CoreDataStack.swift */,
+				78CBA3171A0306B0002BA75C /* MasterViewController.swift */,
+				78CBA3191A0306B0002BA75C /* DetailViewController.swift */,
+				78BC1DB11A100DE800A6FAF7 /* SettingsTableViewController.swift */,
+				78CBA31B1A0306B0002BA75C /* Main.storyboard */,
+				78CBA31E1A0306B0002BA75C /* Images.xcassets */,
+				78CBA3201A0306B0002BA75C /* LaunchScreen.xib */,
+				78CBA3141A0306B0002BA75C /* RWTracker.xcdatamodeld */,
+				78CBA3101A0306B0002BA75C /* Supporting Files */,
+			);
+			path = RWTracker;
+			sourceTree = "<group>";
+		};
+		78CBA3101A0306B0002BA75C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA3111A0306B0002BA75C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78CBA32A1A0306B0002BA75C /* RWTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA32D1A0306B0002BA75C /* RWTrackerTests.swift */,
+				78CBA32B1A0306B0002BA75C /* Supporting Files */,
+			);
+			path = RWTrackerTests;
+			sourceTree = "<group>";
+		};
+		78CBA32B1A0306B0002BA75C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA32C1A0306B0002BA75C /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78CBA3391A0306FE002BA75C /* MWFeedParser */ = {
+			isa = PBXGroup;
+			children = (
+				78CBA33B1A030713002BA75C /* GTMNSString+HTML.h */,
+				78CBA33C1A030713002BA75C /* GTMNSString+HTML.m */,
+				78CBA33D1A030713002BA75C /* MWFeedInfo.h */,
+				78CBA33E1A030713002BA75C /* MWFeedInfo.m */,
+				78CBA33F1A030713002BA75C /* MWFeedItem.h */,
+				78CBA3401A030713002BA75C /* MWFeedItem.m */,
+				78CBA3411A030713002BA75C /* MWFeedParser_Private.h */,
+				78CBA3421A030713002BA75C /* MWFeedParser.h */,
+				78CBA3431A030713002BA75C /* MWFeedParser.m */,
+				78CBA3441A030713002BA75C /* NSDate+InternetDateTime.h */,
+				78CBA3451A030713002BA75C /* NSDate+InternetDateTime.m */,
+				78CBA3461A030713002BA75C /* NSString+HTML.h */,
+				78CBA3471A030713002BA75C /* NSString+HTML.m */,
+				78CBA3481A030713002BA75C /* NSString+XMLEntities.h */,
+				78CBA3491A030713002BA75C /* NSString+XMLEntities.m */,
+			);
+			name = MWFeedParser;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		782103821A07154400EE7D8E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7821038A1A07154400EE7D8E /* RWFetcher.h in Headers */,
+				782103B21A0728AA00EE7D8E /* MWFeedParser.h in Headers */,
+				786B8F4C1A0FCC2D002B5F8E /* MWFeedInfo.h in Headers */,
+				786B8F4B1A0FCC27002B5F8E /* MWFeedItem.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2A20A88E1BC08D9D003B3FC5 /* RWTracker Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A20A89D1BC08D9D003B3FC5 /* Build configuration list for PBXNativeTarget "RWTracker Extension" */;
+			buildPhases = (
+				2A20A88B1BC08D9D003B3FC5 /* Sources */,
+				2A20A88C1BC08D9D003B3FC5 /* Frameworks */,
+				2A20A88D1BC08D9D003B3FC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RWTracker Extension";
+			productName = "RWTracker Extension";
+			productReference = 2A20A88F1BC08D9D003B3FC5 /* RWTracker Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		782103841A07154400EE7D8E /* RWFetcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 782103A21A07154500EE7D8E /* Build configuration list for PBXNativeTarget "RWFetcher" */;
+			buildPhases = (
+				782103801A07154400EE7D8E /* Sources */,
+				782103811A07154400EE7D8E /* Frameworks */,
+				782103821A07154400EE7D8E /* Headers */,
+				782103831A07154400EE7D8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RWFetcher;
+			productName = RWFetcher;
+			productReference = 782103851A07154400EE7D8E /* RWFetcher.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7821038E1A07154500EE7D8E /* RWFetcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 782103A41A07154500EE7D8E /* Build configuration list for PBXNativeTarget "RWFetcherTests" */;
+			buildPhases = (
+				7821038B1A07154500EE7D8E /* Sources */,
+				7821038C1A07154500EE7D8E /* Frameworks */,
+				7821038D1A07154500EE7D8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				782103921A07154500EE7D8E /* PBXTargetDependency */,
+				782103941A07154500EE7D8E /* PBXTargetDependency */,
+			);
+			name = RWFetcherTests;
+			productName = RWFetcherTests;
+			productReference = 7821038F1A07154500EE7D8E /* RWFetcherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		78CBA30C1A0306B0002BA75C /* RWTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78CBA3311A0306B0002BA75C /* Build configuration list for PBXNativeTarget "RWTracker" */;
+			buildPhases = (
+				78CBA3091A0306B0002BA75C /* Sources */,
+				78CBA30A1A0306B0002BA75C /* Frameworks */,
+				78CBA30B1A0306B0002BA75C /* Resources */,
+				782103A31A07154500EE7D8E /* Embed Frameworks */,
+				782C73851A0B3F58003B66E5 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7821039B1A07154500EE7D8E /* PBXTargetDependency */,
+				2A20A8991BC08D9D003B3FC5 /* PBXTargetDependency */,
+			);
+			name = RWTracker;
+			productName = RWTracker;
+			productReference = 78CBA30D1A0306B0002BA75C /* RWTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		78CBA3261A0306B0002BA75C /* RWTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78CBA3341A0306B0002BA75C /* Build configuration list for PBXNativeTarget "RWTrackerTests" */;
+			buildPhases = (
+				78CBA3231A0306B0002BA75C /* Sources */,
+				78CBA3241A0306B0002BA75C /* Frameworks */,
+				78CBA3251A0306B0002BA75C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78CBA3291A0306B0002BA75C /* PBXTargetDependency */,
+			);
+			name = RWTrackerTests;
+			productName = RWTrackerTests;
+			productReference = 78CBA3271A0306B0002BA75C /* RWTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78CBA3051A0306B0002BA75C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Razeware LLC";
+				TargetAttributes = {
+					2A20A88E1BC08D9D003B3FC5 = {
+						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 476QK54UU2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					782103841A07154400EE7D8E = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					7821038E1A07154500EE7D8E = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 78CBA30C1A0306B0002BA75C;
+					};
+					78CBA30C1A0306B0002BA75C = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 476QK54UU2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					78CBA3261A0306B0002BA75C = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 78CBA30C1A0306B0002BA75C;
+					};
+				};
+			};
+			buildConfigurationList = 78CBA3081A0306B0002BA75C /* Build configuration list for PBXProject "RWTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 78CBA3041A0306B0002BA75C;
+			productRefGroup = 78CBA30E1A0306B0002BA75C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78CBA30C1A0306B0002BA75C /* RWTracker */,
+				78CBA3261A0306B0002BA75C /* RWTrackerTests */,
+				782103841A07154400EE7D8E /* RWFetcher */,
+				7821038E1A07154500EE7D8E /* RWFetcherTests */,
+				2A20A88E1BC08D9D003B3FC5 /* RWTracker Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A20A88D1BC08D9D003B3FC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A20A8961BC08D9D003B3FC5 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		782103831A07154400EE7D8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7821038D1A07154500EE7D8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78CBA30B1A0306B0002BA75C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78CBA31D1A0306B0002BA75C /* Main.storyboard in Resources */,
+				78CBA3221A0306B0002BA75C /* LaunchScreen.xib in Resources */,
+				78CBA31F1A0306B0002BA75C /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78CBA3251A0306B0002BA75C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A20A88B1BC08D9D003B3FC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A20A8931BC08D9D003B3FC5 /* TodayViewController.swift in Sources */,
+				2AACE9DB1BC185F400FCA0BF /* CoreDataStack.swift in Sources */,
+				2AACE9DC1BC185F900FCA0BF /* RWTracker.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		782103801A07154400EE7D8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				782103A61A07156100EE7D8E /* RWFetcher.swift in Sources */,
+				782103A71A07275B00EE7D8E /* GTMNSString+HTML.m in Sources */,
+				782103AD1A07276200EE7D8E /* NSString+XMLEntities.m in Sources */,
+				782103AA1A07276200EE7D8E /* MWFeedParser.m in Sources */,
+				782103AC1A07276200EE7D8E /* NSString+HTML.m in Sources */,
+				782103A91A07276200EE7D8E /* MWFeedItem.m in Sources */,
+				782103AB1A07276200EE7D8E /* NSDate+InternetDateTime.m in Sources */,
+				782103A81A07276200EE7D8E /* MWFeedInfo.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7821038B1A07154500EE7D8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				782103991A07154500EE7D8E /* RWFetcherTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78CBA3091A0306B0002BA75C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				782103B71A0735F800EE7D8E /* CoreDataStack.swift in Sources */,
+				78CBA3131A0306B0002BA75C /* AppDelegate.swift in Sources */,
+				78BC1DB21A100DE800A6FAF7 /* SettingsTableViewController.swift in Sources */,
+				78CBA3161A0306B0002BA75C /* RWTracker.xcdatamodeld in Sources */,
+				78CBA3181A0306B0002BA75C /* MasterViewController.swift in Sources */,
+				78CBA31A1A0306B0002BA75C /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78CBA3231A0306B0002BA75C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78CBA32E1A0306B0002BA75C /* RWTrackerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A20A8991BC08D9D003B3FC5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A20A88E1BC08D9D003B3FC5 /* RWTracker Extension */;
+			targetProxy = 2A20A8981BC08D9D003B3FC5 /* PBXContainerItemProxy */;
+		};
+		782103921A07154500EE7D8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 782103841A07154400EE7D8E /* RWFetcher */;
+			targetProxy = 782103911A07154500EE7D8E /* PBXContainerItemProxy */;
+		};
+		782103941A07154500EE7D8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78CBA30C1A0306B0002BA75C /* RWTracker */;
+			targetProxy = 782103931A07154500EE7D8E /* PBXContainerItemProxy */;
+		};
+		7821039B1A07154500EE7D8E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 782103841A07154400EE7D8E /* RWFetcher */;
+			targetProxy = 7821039A1A07154500EE7D8E /* PBXContainerItemProxy */;
+		};
+		78CBA3291A0306B0002BA75C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78CBA30C1A0306B0002BA75C /* RWTracker */;
+			targetProxy = 78CBA3281A0306B0002BA75C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2A20A8941BC08D9D003B3FC5 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A20A8951BC08D9D003B3FC5 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		78CBA31B1A0306B0002BA75C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78CBA31C1A0306B0002BA75C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		78CBA3201A0306B0002BA75C /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78CBA3211A0306B0002BA75C /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A20A89B1BC08D9D003B3FC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RWTracker Extension/RWTracker Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "RWTracker Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.RWTracker.RWTracker-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2A20A89C1BC08D9D003B3FC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RWTracker Extension/RWTracker Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "RWTracker Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.RWTracker.RWTracker-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7821039E1A07154500EE7D8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RWFetcher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWFetcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7821039F1A07154500EE7D8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = RWFetcher/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWFetcher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		782103A01A07154500EE7D8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RWFetcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RWTracker.app/RWTracker";
+			};
+			name = Debug;
+		};
+		782103A11A07154500EE7D8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RWFetcherTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RWTracker.app/RWTracker";
+			};
+			name = Release;
+		};
+		78CBA32F1A0306B0002BA75C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78CBA3301A0306B0002BA75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78CBA3321A0306B0002BA75C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RWTracker/RWTracker.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = RWTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		78CBA3331A0306B0002BA75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RWTracker/RWTracker.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = RWTracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+		78CBA3351A0306B0002BA75C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RWTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RWTracker.app/RWTracker";
+			};
+			name = Debug;
+		};
+		78CBA3361A0306B0002BA75C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = RWTrackerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.razeware.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RWTracker.app/RWTracker";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A20A89D1BC08D9D003B3FC5 /* Build configuration list for PBXNativeTarget "RWTracker Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A20A89B1BC08D9D003B3FC5 /* Debug */,
+				2A20A89C1BC08D9D003B3FC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		782103A21A07154500EE7D8E /* Build configuration list for PBXNativeTarget "RWFetcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7821039E1A07154500EE7D8E /* Debug */,
+				7821039F1A07154500EE7D8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		782103A41A07154500EE7D8E /* Build configuration list for PBXNativeTarget "RWFetcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				782103A01A07154500EE7D8E /* Debug */,
+				782103A11A07154500EE7D8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78CBA3081A0306B0002BA75C /* Build configuration list for PBXProject "RWTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78CBA32F1A0306B0002BA75C /* Debug */,
+				78CBA3301A0306B0002BA75C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78CBA3311A0306B0002BA75C /* Build configuration list for PBXNativeTarget "RWTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78CBA3321A0306B0002BA75C /* Debug */,
+				78CBA3331A0306B0002BA75C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78CBA3341A0306B0002BA75C /* Build configuration list for PBXNativeTarget "RWTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78CBA3351A0306B0002BA75C /* Debug */,
+				78CBA3361A0306B0002BA75C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		78CBA3141A0306B0002BA75C /* RWTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				78CBA3151A0306B0002BA75C /* RWTracker.xcdatamodel */,
+			);
+			currentVersion = 78CBA3151A0306B0002BA75C /* RWTracker.xcdatamodel */;
+			path = RWTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 78CBA3051A0306B0002BA75C /* Project object */;
+}
