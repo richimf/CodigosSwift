@@ -35,7 +35,28 @@ Dentro de este Notebook tenemos que `import coremltools` nos permitirá crear el
 
 <img src="https://koenig-media.raywenderlich.com/uploads/2018/01/13_BML_CompleteNotebook.png" alt=""/>​
 
-### El código...
+Una vez generado el modelo de CoreML, lo copiamos en nuestro proyecto de Xcode.
+
+<img src="https://koenig-media.raywenderlich.com/uploads/2018/01/14_BML_AddToXcode.png" alt=""/>​
+
+Nos dirigimos a nuestro **ViewController.swift**, ahi escribiremos el siguiente código:
+
+``` Swift
+//ML Model
+//Crearemos una usando un Modelo de Regresión lineal para predecir ganancias por publicidad
+
+//Variable global:
+private let advertising = Advertising()
+
+//...Dentro de sliderValueChanged()
+let input = AdvertisingInput(tv: tv, radio: radio, newspaper: newspaper)
+guard let output = try? advertising.prediction(input: input) else {
+   return
+}
+let sales = output.sales
+```
+
+### El código del modelo en Python...
 
 ```python
 import pandas as pd
@@ -112,8 +133,6 @@ adver.head()
   </tbody>
 </table>
 </div>
-
-
 
 
 ```python
