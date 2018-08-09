@@ -1,10 +1,3 @@
-/*import UIKit
- The UIKit framework provides the required infrastructure for your iOS or tvOS apps.
- It provides the window and view architecture for implementing your interface, the event handling infrastructure for delivering Multitouch
- and other types of input to your app, and the main run loop needed to manage interactions among the user, the system, and your app. Other
- features offered by the framework include animation support, document support, drawing and printing support, information about the current
- device, text management and display, search support, accessibility support, app extension support, and resource management.
- */
 
 //*----------------------| SWIFT BASICS |----------------------*//
 
@@ -12,15 +5,23 @@
 /*Optionals are Swift’s solution to the problem of representing both a value and the absence of a value.
  An optional type is allowed to reference either a value or nil.*/
 
+//A symple variable
+var age:Int
+
+//Why can't you do this?
+//var couldNotBeNil:Int = nil
+
+//OPTIONAL VARIABLE
 //this variable itself is like a box containing either an Int or nil
 var myOptional:Int?
-myOptional = 100
 myOptional = nil
+myOptional = 100
 
 var anotherOptional:Int? = 200
 //ERROR: print(anotherOptional + 1)
 print(anotherOptional)
 print(anotherOptional! + 1) //unwrap with: "!"
+
 
 //Nested optionals, it is a number inside a box inside a box insidae a box. You need to unwrap it 3 times.
 let number: Int??? = 10

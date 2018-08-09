@@ -1,11 +1,3 @@
-/*import UIKit
- The UIKit framework provides the required infrastructure for your iOS or tvOS apps.
- It provides the window and view architecture for implementing your interface, the event handling infrastructure for delivering Multitouch
- and other types of input to your app, and the main run loop needed to manage interactions among the user, the system, and your app. Other
- features offered by the framework include animation support, document support, drawing and printing support, information about the current
- device, text management and display, search support, accessibility support, app extension support, and resource management.
- */
-
 //*----------------------| SWIFT STRUCTURES |----------------------*//
 
 /*
@@ -24,7 +16,7 @@ func >=(lhs: Self, rhs: Self) -> Bool
  
 Remember, a Struct is referenced by "value", so you are comparing between values not objects.
  
-See more: http://nshipster.com/swift-comparison-protocols/
+See more: http:// nshipster.com/swift-comparison-protocols/
 */
 import Foundation
 
@@ -33,13 +25,14 @@ struct MyStruct {
     var myValue: Int?
     let myConstant: Double?
 }
-var myimplementation = MyStruct(myValue: 10, myConstant: 20.0)
-myimplementation.myConstant
-myimplementation.myValue
+var ms = MyStruct(myValue: 10, myConstant: 20.0)
+ms.myConstant
+ms.myValue
 
-
+//EXAMPLE
 //STRUCT OF A TV
 struct TV {
+    
     var width:Double
     var height:Double
     
@@ -51,13 +44,13 @@ struct TV {
     }
     
     //STRUCT WITH OPTIONALS GET AND SET
-    var screenSize2: Int {
+    var screenSize2: Int { // this property is read and write, so both keywords are necessary
         get {
             let diagonal = sqrt((width*width) + (height*height)) //Pitagoras to calculate diagonal of screen
             return Int(diagonal) //parse Int
         }
         set{
-           //For a setter,you usually have to make some kind of assumption.
+           //For a setter, you usually have to make some kind of assumption.
            //In this case, you provide a reasonable default value for the screen ratio.
             let ratioWidth = 16.0
             let ratioHeight = 9.0
@@ -74,39 +67,41 @@ struct TV {
         }
     }
 }
-var myTV = TV(width: 10.0, height: 20.0)
+
+
+var myTV = TV(width: 3.0, height: 4.0)
 myTV.screenSize // 22, usa el get
 //myTV.screenSize = 70 //falla, porque screenSize es read-only
 
 myTV.screenSize2 = 70 //, usa el set, y pone 70 a "newValue", newValue = 70
 myTV.height //new height
 
+
 //-----------> PROPERTY OBSERVERS <-----------//
+print("-----------> PROPERTY OBSERVERS <-----------")
 /*
  You’ll need a way to listen to property changes.
  Thankfully, there are a couple of property observers that get called before and after property changes.
  You can use willSet and didSet similar to the way you used set and get.
- Also, keep in mind that the willSet and didSet observers are not called when a property is set during initialization;
- willSet is called just before the value is stored.
- didSet is called immediately after the new value is stored.
+ Also, keep in mind that the -willSet- and -didSet- observers are NOT called when a property is set during initialization
+ -willSet- is called just before the value is stored.
+ -didSet- is called immediately after the new value is stored.
  */
 struct Hola {
     var valor:Int {
         willSet{
             //al cambiar el valor, este observer es llamado y aun conserva el valor anterior
-            print("willSet:")
-            print(valor) //6
+            print("willSet: \(valor) \(newValue)") // 6 y 4
         }
         didSet{
             //se ejecuta este observer con el nuevo valor
-            print("didSet:")
-            print(valor) //4
+            print("didSet: \(valor) \(oldValue)") // 4 y 6
         }
     }
 }
+
 var mihola = Hola(valor: 6)
 mihola.valor = 4
-mihola.valor = 8
 
 //Class example:
 class StepCounter {
@@ -126,7 +121,7 @@ stepCounter.totalSteps = 200
 // About to set totalSteps to 200
 // Added 200 steps
 stepCounter.totalSteps = 360
-// About to set totalSteps to 360
+// About to set totalSteps to 360""""
 // Added 160 steps
 stepCounter.totalSteps = 896
 // About to set totalSteps to 896

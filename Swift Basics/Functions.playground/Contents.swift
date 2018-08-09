@@ -35,9 +35,18 @@ func multiply(number:Int, by number2:Int)->Int{
     return number * number2
 }
 
+func process(input:Int, by input2:Int, and input3:Int) -> (Int,Int) {
+    return (3,4)
+}
+
 func multiplyAndDivide(_ number: Int, by factor: Int) -> (product: Int, quotient: Int) {
     return (number * factor, number / factor)
 }
+
+let p = process(input:1, by: 4, and: 3)
+var p0 = p.0
+var p1 = p.1
+
 let results = multiplyAndDivide(4, by: 2)
 let product = results.product
 let quotient = results.quotient
@@ -55,7 +64,7 @@ multiply(number: 8, by: 5)
 /*The inout keyword before the parameter type indicates that this parameter should be copied in,
  that local copy used within the function, and then copied back out when the function returns.*/
 func increment(value:inout Int){
-    value += 1
+    value += 1 // no return is needed
     print(value)
 }
 

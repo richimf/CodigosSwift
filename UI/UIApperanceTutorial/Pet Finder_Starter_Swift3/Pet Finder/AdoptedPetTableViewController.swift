@@ -60,6 +60,7 @@ extension AdoptedPetTableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+   
     let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritePetCell", for: indexPath)
     let pet = dataProvider.adoptedPets[indexPath.row]
     cell.imageView?.image = UIImage(named: pet.imageName)

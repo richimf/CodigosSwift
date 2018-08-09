@@ -1,15 +1,8 @@
-/*import UIKit
- The UIKit framework provides the required infrastructure for your iOS or tvOS apps.
- It provides the window and view architecture for implementing your interface, the event handling infrastructure for delivering Multitouch
- and other types of input to your app, and the main run loop needed to manage interactions among the user, the system, and your app. Other
- features offered by the framework include animation support, document support, drawing and printing support, information about the current
- device, text management and display, search support, accessibility support, app extension support, and resource management.
- */
 
 //*----------------------| SWIFT CLOSURES |----------------------*//
 
 //Function:
-func sumar(a:Int,b:Int)->Int{
+func sumar(a:Int, b:Int)->Int{
     return a+b
 }
 sumar(a:4, b:3)
@@ -17,31 +10,30 @@ sumar(a:4, b:3)
 //Closures:
 let sumarClosure: (Int, Int)->Int
 sumarClosure = {(a:Int,b:Int)->Int in
-    a+b
+    return a+b
 }
 sumarClosure(4,3)
 
 
 let sumarClosure2 = {(a:Int,b:Int) in
-    a+b
+    return a+b
 }
 sumarClosure2(2,3)
 
 
 let sumarClosure3 = {(a:Int,b:Int) in
-    return a+b
+    a+b // no return
 }
 sumarClosure3(5,6)
 
 
 var sumarClosure4 : (Int,Int)->Int
 sumarClosure4 = {
-    return $0+$1
+    return $0+$1 //index
 }
 sumarClosure4(5,9)
 
-
-                                    //operation: this is a closure
+                                    //operation: this is a closure definition (Int,Int) -> Int
 func operateNumbers(_ a:Int, _ b:Int, operation:(Int,Int) -> Int) ->Int{
     return operation(a,b)
 }
@@ -64,13 +56,53 @@ let novalue: () -> Void  = {
 }
 novalue()
 
-//No parameter closure
+//NO PARAMETER closure
 let increment: () -> Int = {
-    var counter = 1
+    let counter = 1
     return counter
 }
-
 increment()
+
+//EMPTY closure
+let emptyClosure = { () in
+    print("I am empty")
+}
+emptyClosure()
+
+//*----------------------| CUSTOM SORTING WITH CLOSURES |----------------------*//
+/* Closures come in handy when you start looking deeper at collections.You can customize how things are sorted. */
+
+let names = ["ZZZZZZ", "BB", "A", "CCCC", "EEEEE"]
+names.sorted() //simple sorting
+
+//Custom sorting
+names.sorted { //no parenthesis!
+    $0.characters.count > $1.characters.count
+}
+
+//*----------------------| ITERATING OVER COLLECTIONS WITH CLOSURES |----------------------*//
+var prices = [1.5, 10, 4.99, 2.30, 8.19]
+
+// give me prices greater than 5
+let largePrices = prices.filter {
+    return $0 > 5
+}
+
+//*----------------------| MAPPING CLOSURES |----------------------*//
+// now all prices have a 50% discount
+let newPrices = prices.map {
+    return $0 * 0.5
+}
+newPrices
+
+// Mapping in dictionary
+let mapStock = [1:1.2 , 2:2.3, 3:3.4]
+mapStock.map {
+    print($0.key)
+    print($0.value)
+}
+mapStock
+
 
 
 

@@ -77,7 +77,6 @@ for i in 0..<10{
 
 //labels:
 sum = 0
-
 rowLoop: for row in 0..<8{
     print(">rowLoop")
     columLoop: for column in 0..<8 {
@@ -92,7 +91,6 @@ rowLoop: for row in 0..<8{
 }
 
 //ARRAYS AND LOOPS
-
 let names = ["richi","cheneta","toby"]
 for name in names {
     print(name)

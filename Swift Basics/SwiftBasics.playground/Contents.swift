@@ -20,7 +20,7 @@ var variable: Int = 20
 var myVariable: Int
 myVariable = 10
 
-//Int types:
+// Int types:
 // Int is represented with 64 bits or 32 bits, depending on the system.
 // But you can use Int8, Int16, Int32, Int64 to consume 1,2,4 and 8 bytes of storage respectively.
 // Each of these types use 1-bit to represent the sign.
@@ -87,10 +87,23 @@ message += String(exclamationMark)
 
 //-----------> TUPLES <-----------//
 /*
- A tuple is an ordered set of objects, like (2,3).
+ A Tuple is an ordered set of objects, like (2,3). Objects can be repeated.
+ A Set is an unordered collection of unique elements.
  Notice the difference between Set and Tuple, a Set is not ordered and there are not repeated elements.
  */
-let coordinates: (Int, Int) = (2,3) //(Int, Int)
+
+//Set:
+/*
+ You can declare a Set as an Array, just use the "Set" keyword.
+ */
+let ingredients: Set = ["cocoa beans", "sugar", "cocoa butter", "salt"]
+// contains() is a common operation in Sets
+if ingredients.contains("sugar") {
+    print("No thanks, too sweet.")
+}
+
+//Tuple:
+let coordinates: (Int, Int) = (2,3) //(Int, Int), notice 2, 3 are ordered
 let coordinates2 = (3,4.5) //(Int, Double)
 let anotherCoordinates = (4.3,2.9) //(Double,Double)
 
@@ -105,10 +118,10 @@ let ya = anotherCoordinates.1
 
 //Tuples with names:
 let person = (name:"Richie", lastname:"Mon")
-let name = person.0
-let lastname = person.1
+let name = person.name
+let lastname = person.lastname
 
-//Multiple declaration with tuples
+//Multiple declaration with tuples, tuples as variable names
 let coordinates3D = (a:2, b:3, c:4)
 let (a, b, c) = coordinates3D //If you want to access multiple parts of the tuple at the same time
 print(a)
@@ -162,7 +175,7 @@ default:
 
 let animal = "Dog"
 switch animal{
-case "Cat","Dog":
+case "Cat", "Dog":
     print("animal casero")
 default:
     print("animal raro")
@@ -181,8 +194,8 @@ default:
 }
 print(time)
 
+// tuples and switch
 let coords = (x:10, y:20)
-
 switch coords {
 case (0,0):
     print("origin")
