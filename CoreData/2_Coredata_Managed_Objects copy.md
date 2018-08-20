@@ -123,12 +123,25 @@ class ViewController:UIViewController {
 		
 		//reloaddata
 	}
-	
-
 ```
 
+## Agregar mas attributes
 
+Vamos a nuestro modelo, seleccionamos nuestro Entity y agregamos el Attribute que necesitemos, en este caso *address*.
 
+![](./images/1_new_attribute.png)
+
+Vamos a necesitar **Eliminar** nuestra clase de **Properties** y volverla a generar, eliminamos **Friend+CoreDataProperties.swift**.
+
+Ahora generaremos nuevamente la clase, seleccionamos el modelo *PetPal.xcdatamodel* y en el menú *Editor > Create NSManagedObject Subclass...*
+
+![](./images/1_create_classes.png)
+
+Esto generará nuevamente la clase, pero ahora el contenido cambia.
+
+![](./images/1_generatedclases_code.png)
+
+Ahora faltaria editar el ViewController, basicamente se implementa igual que `friend.name`, o sea, `friend.address`.
 
 
  
