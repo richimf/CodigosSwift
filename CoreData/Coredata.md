@@ -15,8 +15,14 @@ Tenemos CoreData, Realm y SQlite como alternativas para persistencia de datos en
 
 ### Temas:
 
-[1. Basics, como agregar CoreData a un proyecto ya existente, una Entity basica](1_Coredata_Basics.md)
+[1. Basics, Como agregar CoreData a un proyecto ya existente, una Entity basica](1_Coredata_Basics.md)
 
-[2. Managed Objects, como usar las clases generadas por Xcode y como guardar info](2_Coredata_Managed_Objects.md)
+[2. Managed Objects, Como usar las clases generadas por Xcode y como guardar info](2_Coredata_Managed_Objects.md)
 
-[3. Attribute Types, NSData, Transformables](3_Attributes.md)
+[3. Attributes, Available Types, Transformable](3_Attributes.md)
+
+[4. Binary Data, How to save/read a photo](4_Binary_Data.md)
+
+[5. Filtering, mediante un query a CoreData](5_Filtering.md)
+
+[6. Sorting]()
