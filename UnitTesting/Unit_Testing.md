@@ -305,6 +305,44 @@ Al **seleccionar algun archivo swift** que no este al **100%**, se puede ver en 
 
 ![](images/unit_test_indicators.png)
 
+
+## Testing a View Controller
+
+``` Swift
+func testSettingsScreen(){
+	let sb = UIStoryboard(name: "Main", bundle: nil)
+	XCTAssertNotNil(sb, "Could not instantiate storyboard")
+	let vc = sb.instantiateViewController(withIdentifier: "SettingsView") as? SettingsViewController
+	_ = vc?.view // <- solo para usar el vc
+}
+```
+
+## Performance
+
+Te permite medir que tan rapido se ejecuta un código. Se especifica un *baseline*, si se rebasa esta linea, entonces se dice que el test fracasó.
+
+```Swift
+func testPerformanceExample() {
+	self.measure {
+	
+	}
+}
+```
+
+Ejemplo, **load a menu**. Se observa que al ejecutar el test obtenemos datos de performance en un *popup*, aqui tambien podemos editar el *baseline* o referencia de tiempo (si es óptimo o no).
+
+![](images/performance_mesure.png)
+
+## Multiples Target Schemes
+
+Se pueden correr diferentes Test en distintos **Schemes**. Agregamos un nuevo **Target**, un nuevo **Unit Testing Bundle**. En su nuevo *Boiler Plate code*, reescribimos el código que nos interesa dentro de la función de `testPerformance()`.
+
+Para tener multiples **Targets** es necesario seleccionar que Test van a ejecutar. Para ello podemos duplicar el *Scheme* y elegir los Test que deseemos.
+
+![](images/target_test.png)
+
+**Nota:** Es recomendable reiniciar Xcode antes de probar los Targets.
+
 ## Error
 
 Un error común si el *ID* identifier del *ViewController* no esta asignado en el Storyboard, `NSInvalidArgumentException`.
@@ -312,22 +350,22 @@ Un error común si el *ID* identifier del *ViewController* no esta asignado en e
 ![](images/error_id.png)
 
 
-
 ## Glosario
 
-**HTTPClient.shared.get**
+[URLSession Tutorial](https://github.com/richimf/CodigosSwift/blob/master/URLSessionTask/URLSession%20Tutorial.md)
 
-**@escaping**
+[@escaping](https://cocoacasts.com/what-do-escaping-and-noescape-mean-in-swift-3), If a closure is passed as an argument to a function and it is invoked after the function returns, the closure is escaping. It is also said that the closure argument escapes the function body.
 
-**NSPredicate**
+[NSPredicate](https://nshipster.com/nspredicate/),
+NSPredicate is a Foundation class that specifies how data should be fetched or filtered
 
-**XCTAssert**
 
-**XCTAssertNotNil**
+**XCTAssert**, Asserts that an expression is true.
 
-**XCTWaiter.wait**
+**XCTAssertNotNil**, Asserts that an expression is not `nil`.
 
-**XCTWaiter.Result.completed**
+**XCTWaiter**, [Waits](https://developer.apple.com/documentation/xctest/xctwaiter) for a group of expectations to be fulfilled.
+
 
 
 
