@@ -26,3 +26,5 @@ Tenemos CoreData, Realm y SQlite como alternativas para persistencia de datos en
 [5. Filtering, mediante un query a CoreData](5_Filtering.md)
 
 [6. Sorting](6_Sorting.md)
+
+[7. Fetched Results Controller](7_Fetched_Results_Controller.md)
