@@ -100,7 +100,7 @@ struct Hola {
     }
 }
 
-var mihola = Hola(valor: 6)
+var mihola = Hola(valor: 8)
 mihola.valor = 4
 
 //Class example:

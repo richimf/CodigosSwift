@@ -8,7 +8,7 @@ enum PetKind {
 }
 
 struct KeeperKind {
-    var keeperOf:PetKind
+    var keeperOf: PetKind
 }
 
 //You define manually every kind of keeper

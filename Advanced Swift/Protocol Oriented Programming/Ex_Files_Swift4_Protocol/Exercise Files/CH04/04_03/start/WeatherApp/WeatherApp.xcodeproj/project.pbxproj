@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13DA3433215921E700DDF19B /* NetworkingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DA3432215921E700DDF19B /* NetworkingController.swift */; };
 		374802671F88B8C000CBD4A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374802661F88B8C000CBD4A1 /* AppDelegate.swift */; };
 		374802691F88B8C000CBD4A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374802681F88B8C000CBD4A1 /* ViewController.swift */; };
 		3748026C1F88B8C000CBD4A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3748026A1F88B8C000CBD4A1 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13DA3432215921E700DDF19B /* NetworkingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingController.swift; sourceTree = "<group>"; };
 		374802631F88B8C000CBD4A1 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		374802661F88B8C000CBD4A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		374802681F88B8C000CBD4A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13DA3431215921D300DDF19B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				13DA3432215921E700DDF19B /* NetworkingController.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		3748025A1F88B8C000CBD4A1 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +87,7 @@
 		374802651F88B8C000CBD4A1 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				13DA3431215921D300DDF19B /* Networking */,
 				374802661F88B8C000CBD4A1 /* AppDelegate.swift */,
 				374802681F88B8C000CBD4A1 /* ViewController.swift */,
 				3748026A1F88B8C000CBD4A1 /* Main.storyboard */,
@@ -199,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13DA3433215921E700DDF19B /* NetworkingController.swift in Sources */,
 				374802691F88B8C000CBD4A1 /* ViewController.swift in Sources */,
 				374802671F88B8C000CBD4A1 /* AppDelegate.swift in Sources */,
 			);

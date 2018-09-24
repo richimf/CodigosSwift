@@ -46,7 +46,7 @@ extension Dog: Pet {
     //code
 }
 
-class Keeper<Animal:Pet>{
+class Keeper<Animal: Pet>{
     
 }
 
@@ -60,7 +60,7 @@ func herd(_ pets: [Pet]) {
         print("Come \($0.name)!")
     }
 }
-// 2
+// 2q
 func herd<Animal: Pet>(_ pets: [Animal]) {
     pets.forEach {
         print("Here \($0.name)!")
