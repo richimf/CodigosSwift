@@ -4,17 +4,10 @@ En este repositorio encontraras codigo util para tus proyectos.
 
 In this repository you will find useful code for your projects.
 
-
-### Concepts
+## Concepts
 
 [Key Value Coding (KVC) and Key Value Observing (KVO)](KVCandKVO.md)
 
-
-### iOS KVC and KVO
-
-
-
-
-### Cryptography
+## Cryptography
 
 https://www.cossacklabs.com/choose-your-ios-crypto.html
