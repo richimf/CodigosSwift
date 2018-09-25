@@ -1,5 +1,10 @@
 # Unit Testing
 
+Un `UnitTest` debe cumplir con los siguientes puntos:
+![](images/red_green_refactor.png)
+
+## Iniciar un Unit Testing
+
 Para comenzar a utilizar *Unit Testing*, primero:
 
 Agregamos un nuevo **TARGET** al proyecto.
@@ -8,7 +13,7 @@ Agregamos un nuevo **TARGET** al proyecto.
 ![](images/Add_target_2.png)
 ![](images/Add_target_3.png)
 
-El código del *Unit Testing* es una subclase de `XCTestCase`:
+> El código del **Unit Testing** es una subclase de `XCTestCase`:
 
 ![](images/Clase_XCTest.png)
 
@@ -16,9 +21,9 @@ Si nos pasamos al icono de Tests, vemos que hay un *DogYearsUnitTests*, pero pod
 
 ## Importing Modules
 
-Si vas a hacer testing de la clase `DogYears` se debe importar el *module* al *Unit Test Target*, recuerda que las clases tienen elementos *Open, Public e Internal* con la palabra `@testable` podemos acceder a elementos de tipo *Internal* desde otros modulos, sin embargo, no podemos acceder a elementos de tipo *Private* desde otros modulos, solo desde su propia clase.
+Si vas a hacer testing de la clase `DogYears` se debe importar el *module* al `Unit Test Target`, recuerda que las clases tienen elementos `Open, Public e Internal` con la palabra `@testable` podemos acceder a elementos de tipo `Internal` desde otros modulos, sin embargo, no podemos acceder a elementos de tipo `Private` desde otros modulos, solo desde su propia clase.
 
-Para **importar el modulo (clase)** en el *Unit Test*:
+Para **importar el modulo (clase)** en el **Unit Test**:
 
 ``` Swift
 import XCTest
@@ -29,7 +34,7 @@ class DogYearsUnitTest: XCTestCase {
 }
 ```
 
-## Structure
+## Structure, setUp() y tearDown()
 
 Tenemos algunas funciones en el UnitTest por defecto (*boilerplate code*), entre ellas se encuentra **setUp()** el cuál crea el ambiente para el *Unit Test* y **tearDown()** que se ejecuta después de invocar al método de testing.
 
@@ -43,8 +48,14 @@ override func tearDown(){
 	super.tearDown()
 	// Put teardown code here. This method is called after the invocation of each test method in the class.
 }
-
 ```
+
+**Important**:
+ 
+> If you created this object in `setUp` but didn’t release it in `tearDown`, it will continue to exist, even while other tests run.
+
+
+## Como nombrar a las funciones de testing
 
 Los métodos o funciones que se ejecutarán por el *Unit Test* deben iniciar con la palabra **test** por ejemplo:
 
@@ -54,7 +65,9 @@ func testExample(){
 }
 ```
 
-Dentro del *Unit Test* tenemos algunas funciones que nos ayudaran a verificar nuestros resultados, como por ejemplo **XCTAssert**, checa que la condicion especificada sea cierta.
+## Verificar resultados
+
+Dentro del *Unit Test* tenemos algunas funciones que nos ayudaran a verificar nuestros resultados, como por ejemplo **XCTAssert**, checa que la condición especificada sea cierta.
 
 ``` Swift
 let calc = Calculator()
@@ -63,35 +76,45 @@ func testAdd(){
 	let result = calc.evaluate(op:"+", arg1: 2.0, arg2: 9.0)
 	XCTAssert(result == 11.0, "Calculator add operation failed")
 }
-
 ```
 
-## Asynchronous
+# Asynchronous
 
-Caso de uso: "Obtener datos de un WebService".
-Queremos ver si el texto cambia después de hacer una petición HTTP.
+Casos de uso: Cuando tenemos que esperar por algún resultado (por ejemplo data de un server).
 
-1.- Crear una instancia del Storyboard y del ViewController para ver si hay diferencias de texto:
+Ejemplo de uso: "Obtener datos de un WebService".
+Queremos ver si el texto cambia después de hacer una petición *HTTP*.
+
+1.- Crear una instancia del `Storyboard` y del `ViewController` para ver si hay diferencias de texto:
 
 ``` Swift
-//Instance of Storyboard
-let sb = UIStoryboard(name: "Main", bundle:nil)
-XCTAssertNotNil(sb, "Could not instiantiate storyboard for Info View content loading")
+func testInfoLoading() {
 
-//Instance of ViewController
-guard let vc = sb.instantiateViewController(withIdentifier: "InfoView") as? InfoViewController else {
+	// Instance of Storyboard
+	let sb = UIStoryboard(name: "Main", bundle:nil)
+	XCTAssertNotNil(sb, "Could not instiantiate storyboard for Info View content loading")
+
+	// Instance of ViewController
+	guard let vc = sb.instantiateViewController(withIdentifier: "InfoView") as? InfoViewController else {
 	XCTAssert(false, "Could not instiantiate view controller for Info View content loading")
 	return
-}
+	}
+	
+	_ = vc.view // Magic
 
-//set content
-let txt1 = vc.txtInfo.text
-vc.loadContent() //HTTP Request
-let txt2 = vc.txtInfo.text
-XCTassert(txt1 != txt2, "Loading content for Info View did not change text")
+	// Set content
+	let txt1 = vc.txtInfo.text
+	
+	vc.loadContent() // <------ HTTP Request
+	
+	let txt2 = vc.txtInfo.text
+	XCTassert(txt1 != txt2, "Loading content for Info View did not change text")
+}
 ```
 
-El código de `loadContent()` es Asyncrono, ya que realiza una petición HTTP, asignaremos 5 segundos de espera, suficientes para recibir una respuesta del servidor.
+El código de `loadContent()` es *Asyncrono*, ya que realiza una petición *HTTP*.
+
+Ahora, asignaremos **5 segundos de espera**, suficientes para recibir una respuesta del servidor.
 
 `XCTWaiter.wait` sirve para poner un *delay*, basicamente diciendole que espere cierto tiempo y chece por un valor que se cumpla.
 
@@ -101,12 +124,17 @@ guard let txt = vc.txtInfo.text else {
 	return
 }
 
-vc.loadContent() //HTTP Request
+vc.loadContent() //<---- HTTP Request
+
 let pred = NSPredicate(format: "text != %@", txt)
 let exp = expectation(for: pred, evaluatedWith: vc.txtInfo, handler:nil)
-let result = XCTWaiter.wait(for:[exp], timeout:5.0) //<- Wait 5 seconds
+
+let result = XCTWaiter.wait(for:[exp], timeout:5.0) //<---- Wait 5 seconds
+
 XCTAssert(result == XCTWaiter.Result.completed, "Loading content for Info View did not change text")
 ```
+
+**Como mejorar este Test**:
 
 Revisemos `loadContent()`, vemos que en su código tenemos un *closure* de *data* y *error*, con Unit Test podemos usar esta petición directamente sin crear una instancia del Storyboard.
 
@@ -132,14 +160,17 @@ Reemplacemos el código anterior con este:
 Ojo, el Test parece haber funcionado, ya que ejecuta bien el código pero como es una llamada Async no revisa si en realidad hay *data*.
 
 ```Swift
-let url = "http:...."
-HTTPClient.shared.get(url: url){ (data, error) in 
-		XCTAssertNil(error, "There was an error loading the InfoView content")
-		XCTAssertNotNil(data, "No data was received from the server for InfoView content")
+func testInfoLoading() {
+	let url = "http:...."
+	HTTPClient.shared.get(url: url){ (data, error) in 
+			XCTAssertNil(error, "There was an error loading the InfoView content")
+			XCTAssertNotNil(data, "No data was received from the server for InfoView content")
+	}
 }
 ```
 
-Para checar si el callback returns data 
+Ahora bien, ¿Como accedemos a un valor que esta dentro del *closure* desde afuera de este?.
+Podemos utilizar una variable global, declaramos `resData`, le pasamos el valor de `data` *(borramos los XCTAssert)*.
 
 ``` Swift
 //Agregamos un nuevo property
@@ -149,8 +180,7 @@ var resData: Data? = nil
 func testInfoLoading() {
 
 	let url = "http://..."
-	HTTPClient.shared.get(url: url) {
-		(data, error) in 
+	HTTPClient.shared.get(url: url) { (data, error) in 
 			self.resData = data
 	}
 	
@@ -163,14 +193,13 @@ func testInfoLoading() {
 	}else{
 		XCTAssert(false, "the call to get the URL ran into some other error")
 	}
-
 }
 ```
 
 ## Mocking
 
-The mock object:
-Instead of a production code, you can use an standing object to simulate all necessary data locally, the fake object should be the equivalent of production class.
+* The mock object:
+Instead of a production code, you can use an standing object to simulate all necessary data locally, the *fake object* should be the equivalent of *production* class.
 
 Another class handle the fetching.
 The Mock Object mimics the caracteristics of URLSession in testing.
@@ -291,7 +320,7 @@ func testInfoLoading() {
  
 ## Reporting Xcode features
  
- Te dice que partes de tu código estan en Unit Test y que partes no lo estan.
+ Te dice que partes de tu código estan en `Unit Test` y que partes no lo estan.
  
  **CodeCoverage**, en los Profiles, seleccionamos la opción dentro de Test. Ejecutamos todos los Test `Cmd+U`.
 
@@ -317,7 +346,7 @@ func testSettingsScreen(){
 }
 ```
 
-## Performance
+# Performance
 
 Te permite medir que tan rapido se ejecuta un código. Se especifica un *baseline*, si se rebasa esta linea, entonces se dice que el test fracasó.
 
@@ -341,24 +370,20 @@ Para tener multiples **Targets** es necesario seleccionar que Test van a ejecuta
 
 ![](images/target_test.png)
 
-**Nota:** Es recomendable reiniciar Xcode antes de probar los Targets.
+**Nota:** Es recomendable **reiniciar Xcode** antes de probar los *Targets*.
 
 ## Error
 
-Un error común si el *ID* identifier del *ViewController* no esta asignado en el Storyboard, `NSInvalidArgumentException`.
+* Un error común es cuando el **ID** identifier del `ViewController` no esta asignado en el Storyboard, y obtenemos un error de tipo `NSInvalidArgumentException`.
 
 ![](images/error_id.png)
 
+* How to Fix it:
+
+![](images/error_id_storyboard.png)
+
 
 ## Glosario
-
-[URLSession Tutorial](https://github.com/richimf/CodigosSwift/blob/master/URLSessionTask/URLSession%20Tutorial.md)
-
-[@escaping](https://cocoacasts.com/what-do-escaping-and-noescape-mean-in-swift-3), If a closure is passed as an argument to a function and it is invoked after the function returns, the closure is escaping. It is also said that the closure argument escapes the function body.
-
-[NSPredicate](https://nshipster.com/nspredicate/),
-NSPredicate is a Foundation class that specifies how data should be fetched or filtered
-
 
 **XCTAssert**, Asserts that an expression is true.
 
@@ -366,8 +391,23 @@ NSPredicate is a Foundation class that specifies how data should be fetched or f
 
 **XCTWaiter**, [Waits](https://developer.apple.com/documentation/xctest/xctwaiter) for a group of expectations to be fulfilled.
 
+### Concepts
+
+[@escaping](https://cocoacasts.com/what-do-escaping-and-noescape-mean-in-swift-3), If a closure is passed as an argument to a function and it is invoked after the function returns, the closure is escaping. It is also said that the closure argument escapes the function body.
+
+[URLSession Tutorial](https://github.com/richimf/CodigosSwift/blob/master/URLSessionTask/URLSession%20Tutorial.md)
+
+[NSPredicate](https://nshipster.com/nspredicate/),
+NSPredicate is a Foundation class that specifies how data should be fetched or filtered
 
 
+## References
+
+[I’m Pretty Sure Most of Us Are Wrong about XCTestCase tearDown…](https://qualitycoding.org/xctestcase-teardown/)
+
+[Four simple rules for architecting iOS unit tests](https://medium.com/practical-ios-development/the-anatomy-of-a-well-architected-ios-unit-test-a509d2be9ec0)
+
+[iOS Unit Testing and UI Testing Tutorial](https://www.raywenderlich.com/709-ios-unit-testing-and-ui-testing-tutorial)
 
 
 
