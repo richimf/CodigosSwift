@@ -32,6 +32,8 @@ class Person {
 }
 
 let me = Person(name: "Cosmin", age: 30)
+let me2 = Person(name: "Richie", age: 27)
+let me3 = Person(name: "Violeta", age: 28)
 
 //Error, impossible to retreive a key called "name" and so on.
 /*
@@ -59,6 +61,10 @@ extension Person {
 me["name"]
 me["age"]
 me["gender"]
+
+me2["name"]
+me2["age"]
+me2["gender"]
 
 
 
