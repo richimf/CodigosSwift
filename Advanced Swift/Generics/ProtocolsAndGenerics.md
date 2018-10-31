@@ -1,6 +1,8 @@
 # Protocols and Generics
 
-1.- Supongamos que tenemos un `Stack` de `Int`s:
+Ver [associatedtype](associatedtype.md):
+
+1.- Supongamos que tenemos un `Stack` de `Int`:
 
 ``` Swift
 struct Stack {
