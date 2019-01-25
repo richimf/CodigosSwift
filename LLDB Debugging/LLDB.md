@@ -126,15 +126,15 @@ Example:
 ```
 (lldb) breakpoint list
 Current breakpoints:
-1: file = '/Users/ricardo.montesinos/Documents/GitHub/LLDBtutorial/LLDBtutorial/ViewController.swift', line = 27, exact_match = 0, locations = 1, resolved = 1, hit count = 1
+1: file = '/Users/richie/Documents/GitHub/LLDBtutorial/LLDBtutorial/ViewController.swift', line = 27, exact_match = 0, locations = 1, resolved = 1, hit count = 1
 
   1.1: where = LLDBtutorial`LLDBtutorial.ViewController.valueof(a: Swift.Int, b: Swift.Int) -> Swift.Int + 27 at ViewController.swift:27, address = 0x0000000109d6a7cb, resolved, hit count = 1 
 
-2: file = '/Users/ricardo.montesinos/Documents/GitHub/LLDBtutorial/LLDBtutorial/ViewController.swift', line = 28, exact_match = 0, locations = 1, resolved = 1, hit count = 1
+2: file = '/Users/richie/Documents/GitHub/LLDBtutorial/LLDBtutorial/ViewController.swift', line = 28, exact_match = 0, locations = 1, resolved = 1, hit count = 1
 
   2.1: where = LLDBtutorial`LLDBtutorial.ViewController.valueof(a: Swift.Int, b: Swift.Int) -> Swift.Int + 44 at ViewController.swift:28, address = 0x0000000109d6a7dc, resolved, hit count = 1 
 
-3: file = '/Users/ricardo.montesinos/Documents/GitHub/LLDBtutorial/LLDBtutorial/ViewController.swift', line = 17, exact_match = 0, locations = 1, resolved = 1, hit count = 1
+3: file = '/Users/richie/Documents/GitHub/LLDBtutorial/LLDBtutorial/ViewController.swift', line = 17, exact_match = 0, locations = 1, resolved = 1, hit count = 1
 
   3.1: where = LLDBtutorial`LLDBtutorial.ViewController.viewDidLoad() -> () + 127 at ViewController.swift:17, address = 0x0000000109d6a60f, resolved, hit count = 1 
 ```
