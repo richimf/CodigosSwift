@@ -23,13 +23,18 @@ Print:
 (lldb) p
 ```
 
-
+### Editing a value in debugger:
 Expression:
 
 ```
 (lldb) expression
 (lldb) e
+(lldb) expr myString = @"Foo"
+
+(lldb) expression dict = nil
+(NSDictionary *) $5 = nil
 ```
+
 
 ### Generate a Report
 
