@@ -12,6 +12,7 @@ Para guardar una instancia de **NSManagedObject** necesitamos usar **Managed Obj
 * **NSManagedObject** siempre va de la mano con un **ManagedObjectContext**.
 
 Pero, necesitamos de **Persistent Store Container** para poder guardar instancias de nuestras clases.
+**Persistent Store Container** es quien tiene la referencia del archivo de BD.
 
 ## Como implementar esto
 
@@ -148,5 +149,6 @@ Esto generará nuevamente la clase, pero ahora el contenido cambia.
 Ahora faltaria editar el ViewController, basicamente se implementa igual que `friend.name`, o sea, `friend.address`.
 
 
- 
- 
+ # Referencias
+
+ https://medium.com/@ankurvekariya/core-data-crud-with-swift-4-2-for-beginners-40efe4e7d1cc
