@@ -7,7 +7,11 @@ Y notifica cuando el objeto cambia o si el objeto va a ser borrado o guardado.
 
 > CoreData Properties: Son generados cada vez que se genera un nuevo CoreData Class.
 
-Para guardar una instancia de **NSManagedObject** necesitamos usar **Managed Object Context**, esto es como una especie de *Data Manager*. Pero, necesitamos de **Persistent Store Container** para poder guardar instancias de nuestras clases.
+Para guardar una instancia de **NSManagedObject** necesitamos usar **Managed Object Context**, esto es como una especie de *Data Manager*.
+
+* **NSManagedObject** siempre va de la mano con un **ManagedObjectContext**.
+
+Pero, necesitamos de **Persistent Store Container** para poder guardar instancias de nuestras clases.
 
 ## Como implementar esto
 
