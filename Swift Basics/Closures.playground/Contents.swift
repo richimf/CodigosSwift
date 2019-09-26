@@ -15,7 +15,7 @@ sumarClosure = {(a:Int,b:Int)->Int in
 sumarClosure(4,3)
 
 
-let sumarClosure2 = {(a:Int,b:Int) in
+let sumarClosure2 = {(a:Int,b:Int) -> Int in
     return a+b
 }
 sumarClosure2(2,3)
@@ -33,8 +33,13 @@ sumarClosure4 = {
 }
 sumarClosure4(5,9)
 
+
+var sumarClosure5 = {
+   return 6
+}
+
                                     //operation: this is a closure definition (Int,Int) -> Int
-func operateNumbers(_ a:Int, _ b:Int, operation:(Int,Int) -> Int) ->Int{
+func operateNumbers(_ a:Int, _ b:Int, operation: (Int,Int) -> Int) ->Int {
     return operation(a,b)
 }
 
@@ -73,16 +78,16 @@ emptyClosure()
 /* Closures come in handy when you start looking deeper at collections.You can customize how things are sorted. */
 
 let names = ["ZZZZZZ", "BB", "A", "CCCC", "EEEEE"]
-names.sorted() //simple sorting
-
+//names.sorted() //simple sorting
+names.sorted()
 //Custom sorting
 names.sorted { //no parenthesis!
-    $0.characters.count > $1.characters.count
+    $0.count - $1.count < 0
 }
+names
 
 //*----------------------| ITERATING OVER COLLECTIONS WITH CLOSURES |----------------------*//
 var prices = [1.5, 10, 4.99, 2.30, 8.19]
-
 // give me prices greater than 5
 let largePrices = prices.filter {
     return $0 > 5
@@ -105,9 +110,15 @@ mapStock
 
 
 
+var valores = [1,2,3,4,5]
+let reducido = valores.reduce(10, +)
 
+let nombres = ["alan","brian","charlie"]
+let csv = nombres.reduce("/o.o/") {text, name in "\(text),\(name)"}
+print(csv)
 
+let results = [[5,2,7], [4,8], [9,1,3]]
+let allResults = results.flatMap { $0 }
+allResults
 
-
-
-
+// https://useyourloaf.com/blog/swift-guide-to-map-filter-reduce/

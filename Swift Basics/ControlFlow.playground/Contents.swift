@@ -10,7 +10,7 @@
 
 //-----------> RANGES <-----------//
 let myrange = 0...5 //0 to 5
-let myrangewithoutfive = 0..<5
+let myrangewithoutfive = 0..<5 //0 al 4
 
 
 //-----------> LOOPS <-----------//
@@ -40,7 +40,7 @@ print(sum)
 //FOR Loop
 //for constant in range { ... }
 sum=0
-for i in 1...10{
+for i in 1...10 {
     sum += i
     print("\(i) = \(sum)")
 }
@@ -58,15 +58,16 @@ for _ in 1...10{
 //loop under conditions
 let count = 10
 sum = 0
-for i in 1...10 where i % 2 == 1  {
+for i in 1...10 where i % 2 == 0  {
     //sum odd numbers
     sum += i
-    print("\(i) = \(sum) \n")
+    print("here \(i) = \(sum) \n")
 }
 
 //-----------> CONTINUE AND LABELED STATEMENTS <-----------//
 //Sometimes you'd like to skip a loop iteration for a particular case without breaking
 //out of the loop entirely. You can do this with the "continue" statement.
+let optional: Int?
 for i in 0..<10{
     //print just odd numbers, skip even
     if i%2 == 0 {
@@ -91,9 +92,9 @@ rowLoop: for row in 0..<8{
 }
 
 //ARRAYS AND LOOPS
-let names = ["richi","cheneta","toby"]
-for name in names {
-    print(name)
+let names = ["richi","dddd","toby"]
+for n in names {
+    print(n)
 }
 
 

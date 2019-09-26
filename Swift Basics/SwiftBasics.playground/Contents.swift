@@ -13,8 +13,8 @@ let myConstant:Int = 10
 let pi:Double = 3.1416
 
 //-----------> VARIABLES <-----------//
-var myMoney = 1_300
-var 😆 = "jajajaja"
+var myMoney = 1_300_999
+var 😆:String = "jajajaja"
 var variable: Int = 20
 
 var myVariable: Int
@@ -103,12 +103,12 @@ if ingredients.contains("sugar") {
 }
 
 //Tuple:
-let coordinates: (Int, Int) = (2,3) //(Int, Int), notice 2, 3 are ordered
-let coordinates2 = (3,4.5) //(Int, Double)
+let coordinates: (x: Int, y: Int) = (2, 3) //(Int, Int), notice 2, 3 are ordered
+let coordinates2 = (3, 4.5, "hola") //(Int, Double)
 let anotherCoordinates = (4.3,2.9) //(Double,Double)
 
-let x = coordinates.0
-let y = coordinates.1
+let x = coordinates.x
+let y = coordinates.y
 
 let x2 = coordinates2.0
 let y2 = coordinates2.1
@@ -117,9 +117,10 @@ let xa = anotherCoordinates.0
 let ya = anotherCoordinates.1
 
 //Tuples with names:
-let person = (name:"Richie", lastname:"Mon")
+let person = (name:"Richie", lastname:"Mon", age: 18)
 let name = person.name
 let lastname = person.lastname
+let age = person.age
 
 //Multiple declaration with tuples, tuples as variable names
 let coordinates3D = (a:2, b:3, c:4)
@@ -163,8 +164,8 @@ let beta = 10
 let min = alfa < beta ? alfa : beta
 let max = alfa > beta ? alfa : beta
 
-//-----------> SWITCH STATEMENTS <-----------//
 
+//-----------> SWITCH STATEMENTS <-----------//
 let number = 10
 switch number {
 case 0:
@@ -203,16 +204,18 @@ default:
     print("\(coords.x) \(coords.y)")
 }
 
+print("\n")
 
+var myOptional: Int? = 1000
+var value: Int = myOptional ?? 100
+print(value)
 
+func myFunc() -> Int {
+  guard let val = myOptional else {
+    return 0
+  }
+  return val
+}
 
-
-
-
-
-
-
-
-
-
-
+let unwrapped = myFunc()
+print(unwrapped)

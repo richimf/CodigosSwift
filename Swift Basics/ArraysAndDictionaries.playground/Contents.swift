@@ -17,7 +17,7 @@ names.insert("luis", at: 3)
 names.contains("aloooz")
 names.append("dan")
 names += ["eli"]
-
+names[0] = "jeje"
 print(names) //"["jose", "richo", "roberto", "luis", "violeta", "dan", "eli"]
 
 // prefix returns the required number of elements from the front of the array
@@ -32,6 +32,8 @@ print([1,2,3,4,5].min())
 let allZeros = [Int](repeating:0, count:5)
 let arrayFrom1to10 = [1...10]
 
+//print(arrayFrom1to10.capacity)
+
 var anEmptyArray: [Int] = []
 anEmptyArray.isEmpty
 
@@ -40,10 +42,12 @@ anEmptyArray.isEmpty
 //All values have to be of the same type
 
 //define an empty dictionary
-var pairs:[String:Int] = [:]
+var pairs:[String: Int] = [:]
 
-
-var dictionary = ["key1":5, "key2":3]
+var dictionary: [String: Int] = [:]
+dictionary = ["key1": 5, "key2": 3]
+dictionary = ["key3": 5, "key5": 3]
+dictionary
 dictionary["key1"]
 dictionary.updateValue(78, forKey: "key2")
 dictionary

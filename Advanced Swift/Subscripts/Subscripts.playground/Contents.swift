@@ -31,11 +31,11 @@ class Person {
     }
 }
 
-let me = Person(name: "Cosmin", age: 30)
-let me2 = Person(name: "Richie", age: 27)
-let me3 = Person(name: "Violeta", age: 28)
+let p = Person(name: "Toby", age: 30)
+let q = Person(name: "Richie", age: 28)
+let t = Person(name: "Violeta", age: 28)
 
-//Error, impossible to retreive a key called "name" and so on.
+//Error, impossible to retreive a key called "name".
 /*
 me["name"]
 me["age"]
@@ -67,9 +67,24 @@ me2["age"]
 me2["gender"]
 
 
+enum Currency {
+  case MXN
+  case USD
+}
+extension Currency {
+  subscript(key: String) -> String? {
+    if key == "Mexico" {
+      return "Pesos"
+    }
+    if key == "Gringos" {
+      return "Dolares"
+    }
+    return nil
+  }
+}
 
-
-
+let c = Currency
+c.self["Gringos"]
 
 
 

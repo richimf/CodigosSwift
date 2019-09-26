@@ -11,9 +11,10 @@
 //-----------> BASICS <-----------//
 //Swift copies the value before passing it oto the function, a behavior known as pass-by-value
 // Ideally a function doesn't alter its parameters.
-func printHola(){
+func printHola() {
     print("hola")
 }
+
 
 func printHola(v:String){
     print(v)
@@ -22,6 +23,7 @@ func printHola(v:String){
 func printHola(_ v:String){
     print(v)
 }
+printHola("hola")
 
 func printHola(v:String, i:Int){
     print("\(v) \(i)")
@@ -30,14 +32,17 @@ func printHola(v:String, i:Int){
 func printTwoThings(name:String, and lastName:String){
     print("\(name) \(lastName)")
 }
+printTwoThings(name: "richie", and: "Mota")
 
 func multiply(number:Int, by number2:Int)->Int{
     return number * number2
 }
+multiply(number: 3, by: 5)
 
 func process(input:Int, by input2:Int, and input3:Int) -> (Int,Int) {
     return (3,4)
 }
+process(input: 5, by: 19, and: 22)
 
 func multiplyAndDivide(_ number: Int, by factor: Int) -> (product: Int, quotient: Int) {
     return (number * factor, number / factor)
@@ -90,12 +95,17 @@ print(sum(numbers: 1,2,3,4,5,6,7,8,9,10))
 
 
 
+func name() -> String {
+  return "name"
+}
 
+func myStringFunc(n: String) {
+  print(n)
+}
 
+myStringFunc(n: name())
 
-
-
-
+name() //   () -> String
 
 
 

@@ -4,7 +4,7 @@ Es un patrón de diseño que permite a un objeto enviar mensajes a otro objeto c
 
 ¿Como comunicamos dos ViewControllers?
 
-**Step 1**:  Add Protocol in class B:
+**Step 1**: Create a Protocol:
 
 ``` Swift
 protocol ClassBVCDelegate: class {
@@ -18,7 +18,7 @@ protocol ClassBVCDelegate: class {
   weak var delegate: ClassBVCDelegate?
 ```
 
-**Step 3**: En la clase B usamos el delegate declarado y envaimos info :V
+**Step 3**: En la clase B usamos la instancia del Delegate y envaimos info :V
 
 ``` Swift
 func handleTap(_ tapGesture: UITapGestureRecognizer) {

@@ -47,6 +47,7 @@ struct TV {
     var screenSize2: Int { // this property is read and write, so both keywords are necessary
         get {
             let diagonal = sqrt((width*width) + (height*height)) //Pitagoras to calculate diagonal of screen
+            print("diagonal = \(diagonal)")
             return Int(diagonal) //parse Int
         }
         set{
@@ -100,8 +101,11 @@ struct Hola {
     }
 }
 
-var mihola = Hola(valor: 8)
+var mihola = Hola(valor: 6)
 mihola.valor = 4
+mihola.valor = 5
+
+print("\n > StepCounter ---------- \n")
 
 //Class example:
 class StepCounter {
@@ -169,7 +173,7 @@ struct Circle {
     lazy var pi = {
         return ((4.0 * atan(1.0 / 5.0)) - atan(1.0 / 239.0)) * 4.0
     }()
-    var radius = 0.0
+  var radius: Double
     var circumference: Double {
         mutating get {
             return pi * radius * 2

@@ -14,6 +14,7 @@
 		4609E6F21E60934E00A1DFB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4609E6F01E60934E00A1DFB0 /* LaunchScreen.storyboard */; };
 		4609E6FD1E60934E00A1DFB0 /* DispatchDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E6FC1E60934E00A1DFB0 /* DispatchDemoTests.swift */; };
 		4609E7081E60934E00A1DFB0 /* DispatchDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4609E7071E60934E00A1DFB0 /* DispatchDemoUITests.swift */; };
+		89E3D7CF233D57550087813F /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E3D7CE233D57550087813F /* CustomViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		4609E7031E60934E00A1DFB0 /* DispatchDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DispatchDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4609E7071E60934E00A1DFB0 /* DispatchDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchDemoUITests.swift; sourceTree = "<group>"; };
 		4609E7091E60934E00A1DFB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89E3D7CE233D57550087813F /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				4609E6E71E60934E00A1DFB0 /* AppDelegate.swift */,
 				4609E6E91E60934E00A1DFB0 /* ViewController.swift */,
+				89E3D7CE233D57550087813F /* CustomViews.swift */,
 				4609E6EB1E60934E00A1DFB0 /* Main.storyboard */,
 				4609E6EE1E60934E00A1DFB0 /* Assets.xcassets */,
 				4609E6F01E60934E00A1DFB0 /* LaunchScreen.storyboard */,
@@ -212,6 +215,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -259,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E3D7CF233D57550087813F /* CustomViews.swift in Sources */,
 				4609E6EA1E60934E00A1DFB0 /* ViewController.swift in Sources */,
 				4609E6E81E60934E00A1DFB0 /* AppDelegate.swift in Sources */,
 			);
@@ -416,7 +421,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.richie.DispatchDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -428,7 +433,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.richie.DispatchDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -505,6 +510,7 @@
 				4609E70E1E60934E00A1DFB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4609E70F1E60934E00A1DFB0 /* Build configuration list for PBXNativeTarget "DispatchDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +519,7 @@
 				4609E7111E60934E00A1DFB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4609E7121E60934E00A1DFB0 /* Build configuration list for PBXNativeTarget "DispatchDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +528,7 @@
 				4609E7141E60934E00A1DFB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
